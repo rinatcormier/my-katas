@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:11
+    volumes:
+      - ./src/main/resources/sqlex.sql:/docker-entrypoint-initdb.d/sqlex.sql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sqlex
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
