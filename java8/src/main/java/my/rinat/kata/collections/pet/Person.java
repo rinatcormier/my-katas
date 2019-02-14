@@ -16,45 +16,45 @@ class Person {
     private final String lastName;
     private final MutableList<Pet> pets = FastList.newList();
 
-    public Person(String firstName, String lastName) {
+    Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public String getFirstName() {
+    String getFirstName() {
         return this.firstName;
     }
 
-    public String getLastName() {
+    String getLastName() {
         return this.lastName;
     }
 
-    public boolean named(String name) {
+    boolean named(String name) {
         return name.equals(this.firstName + ' ' + this.lastName);
     }
 
-    public boolean hasPet(PetType petType) {
+    boolean hasPet(PetType petType) {
         return this.pets.anySatisfyWith(Predicates2.attributeEqual(Pet::getType), petType);
     }
 
-    public MutableList<Pet> getPets() {
+    MutableList<Pet> getPets() {
         return this.pets;
     }
 
-    public MutableBag<PetType> getPetTypes() {
+    MutableBag<PetType> getPetTypes() {
         return this.pets.collect(Pet::getType, HashBag.newBag());
     }
 
-    public Person addPet(PetType petType, String name, int age) {
+    Person addPet(PetType petType, String name, int age) {
         this.pets.add(new Pet(petType, name, age));
         return this;
     }
 
-    public boolean isPetPerson() {
+    boolean isPetPerson() {
         return this.getNumberOfPets() >= 1;
     }
 
-    public int getNumberOfPets() {
+    int getNumberOfPets() {
         return this.pets.size();
     }
 }

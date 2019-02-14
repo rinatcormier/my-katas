@@ -11,15 +11,15 @@ class Pet {
         this.age = age;
     }
 
-    public PetType getType() {
+    PetType getType() {
         return this.type;
     }
 
-    public String getName() {
+    String getName() {
         return this.name;
     }
 
-    public int getAge() {
+    int getAge() {
         return this.age;
     }
 }
