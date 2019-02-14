@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:11
     volumes:
-      - ./src/main/resources/sqlex.sql:/docker-entrypoint-initdb.d/sqlex.sql
+      - ./sqlex.sql:/docker-entrypoint-initdb.d/sqlex.sql
     ports:
       - "5432:5432"
     environment:
