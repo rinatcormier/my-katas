@@ -1,6 +1,6 @@
 package my.rinat.kata.collections.pet;
 
-public class Pet {
+class Pet {
     private final PetType type;
     private final String name;
     private final int age;

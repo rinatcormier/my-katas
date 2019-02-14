@@ -10,7 +10,7 @@ import org.eclipse.collections.impl.list.mutable.FastList;
  * Domain model was taken
  * from <a href="https://github.com/eclipse/eclipse-collections-kata">eclipse-collections-kata</a>
  */
-public class Person {
+class Person {
 
     private final String firstName;
     private final String lastName;
