@@ -19,7 +19,7 @@
 
     <dependencies>
 
-        <!-- eclipse collections -->
+        <!-- collections frameworks -->
 
         <dependency>
             <groupId>org.eclipse.collections</groupId>
@@ -29,6 +29,21 @@
         <dependency>
             <groupId>org.eclipse.collections</groupId>
             <artifactId>eclipse-collections</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
         </dependency>
 
         <!-- date-time -->

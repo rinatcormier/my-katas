@@ -34,7 +34,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- eclipse collections -->
+            <!-- collections frameworks -->
 
             <dependency>
                 <groupId>org.eclipse.collections</groupId>
@@ -46,6 +46,24 @@
                 <groupId>org.eclipse.collections</groupId>
                 <artifactId>eclipse-collections</artifactId>
                 <version>${eclipse-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>25.0-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vavr</groupId>
+                <artifactId>vavr</artifactId>
+                <version>0.9.2</version>
             </dependency>
 
             <!-- junit 5 -->
