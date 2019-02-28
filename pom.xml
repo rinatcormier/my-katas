@@ -10,7 +10,6 @@
     <modules>
         <module>java8</module>
         <module>java11</module>
-        <module>java12</module>
         <module>kotlin</module>
         <module>groovy</module>
         <module>scala</module>
