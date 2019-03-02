@@ -7,6 +7,33 @@
     <groupId>my.rinat</groupId>
     <artifactId>katas</artifactId>
     <version>1.0</version>
+
+    <description>
+        These katas mainly copied from https://github.com/BNYMellon/CodeKatas and
+        https://github.com/eclipse/eclipse-collections-kata.
+
+        ==========
+        The Calendar Kata is an advanced kata which can help developers
+        become familiar with the Java 8 Date/Time and ThreeTen-Extra libraries
+        ==========
+        The CodePoint code kata gives you an opportunity to learn about string manipulation and
+        reading from and writing to files in Java.
+        ==========
+        The Deck of Cards Kata is an advanced kata which can help developers
+        become familiar with multiple Java Collection Frameworks.
+        ==========
+        The Donut Kata is an advanced kata which can help developers
+        become familiar with lesser known APIs of Eclipse Collections.
+        ==========
+        The Java Lambda Kata is meant to give a quick practical introduction to understanding and
+        leveraging lambdas in Java 8.
+        ==========
+        The JMH Kata is a simple project setup with some basic micro-benchmarks
+        that you can use as a model to try out your own Java micro-benchmarks using
+        the Java Micro-benchmark Harness (JMH).
+        ==========
+    </description>
+
     <modules>
         <module>java8</module>
         <module>java11</module>
