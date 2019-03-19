@@ -1,16 +1,19 @@
 package my.rinat.kata.collections.company;
 
+import java.util.List;
+
+import org.assertj.core.api.Assertions;
 import org.eclipse.collections.api.block.function.Function;
 import org.eclipse.collections.api.block.function.primitive.DoubleFunction;
 import org.eclipse.collections.api.block.predicate.Predicate;
 import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.list.primitive.MutableDoubleList;
 import org.eclipse.collections.impl.factory.Lists;
+import org.eclipse.collections.impl.factory.primitive.DoubleLists;
 import org.eclipse.collections.impl.utility.ArrayIterate;
+import org.eclipse.collections.impl.utility.Iterate;
 import org.eclipse.collections.impl.utility.ListIterate;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 /**
  * Below are links to APIs that may be helpful during these exercises.
@@ -41,7 +44,7 @@ class Exercise4Test extends CompanyDomainForKata {
                 "Furniture Hamlet",
                 "SFD",
                 "Doxins");
-        // fixme: Assert.assertEquals(expectedSupplierNames, supplierNames);
+        Assertions.assertThat(supplierNames).isEqualTo(expectedSupplierNames);
     }
 
     /**
@@ -52,7 +55,7 @@ class Exercise4Test extends CompanyDomainForKata {
     void countSuppliersWithMoreThanTwoItems() {
         Predicate<Supplier> moreThanTwoItems = null;
         int suppliersWithMoreThanTwoItems = 0;
-        // fixme: Assert.assertEquals("suppliers with more than 2 items", 5, suppliersWithMoreThanTwoItems);
+        Assertions.assertThat(suppliersWithMoreThanTwoItems).isEqualTo(5);
     }
 
     /**
@@ -65,8 +68,8 @@ class Exercise4Test extends CompanyDomainForKata {
 
         // Find one supplier that supplies toasters.
         Supplier toasterSupplier = null;
-        // fixme: Assert.assertNotNull("toaster supplier", toasterSupplier);
-        // fixme: Assert.assertEquals("Doxins", toasterSupplier.getName());
+        Assertions.assertThat(toasterSupplier).isNotNull();
+        Assertions.assertThat(toasterSupplier.getName()).isEqualTo("Doxins");
     }
 
     /**
@@ -77,7 +80,7 @@ class Exercise4Test extends CompanyDomainForKata {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         MutableList<Double> orderValues = null;
         MutableList<Double> filtered = null;
-        // fixme: Assert.assertEquals(Lists.mutable.with(372.5, 1.75), filtered);
+        Assertions.assertThat(filtered).isEqualTo(Lists.mutable.with(372.5, 1.75));
     }
 
     /**
@@ -88,7 +91,7 @@ class Exercise4Test extends CompanyDomainForKata {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         MutableDoubleList orderValues = null;
         MutableDoubleList filtered = null;
-        // fixme: Assert.assertEquals(DoubleLists.mutable.with(372.5, 1.75), filtered);
+        Assertions.assertThat(filtered).isEqualTo(DoubleLists.mutable.with(372.5, 1.75));
     }
 
     /**
@@ -98,6 +101,6 @@ class Exercise4Test extends CompanyDomainForKata {
     void filterOrders() {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         MutableList<Order> filtered = null;
-        // fixme: Assert.assertEquals(Lists.mutable.with(Iterate.getFirst(this.company.getMostRecentCustomer().getOrders())), filtered);
+        Assertions.assertThat(filtered).isEqualTo(Lists.mutable.with(Iterate.getFirst(this.company.getMostRecentCustomer().getOrders())));
     }
 }

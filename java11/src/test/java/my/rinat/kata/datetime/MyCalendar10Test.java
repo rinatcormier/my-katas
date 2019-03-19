@@ -1,12 +1,15 @@
 package my.rinat.kata.datetime;
 
+import my.rinat.kata.datetime.calendarkata10.Meeting;
 import my.rinat.kata.datetime.calendarkata10.MyCalendar;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.Month;
 import java.util.TimeZone;
 
 class MyCalendar10Test {
@@ -109,59 +112,49 @@ class MyCalendar10Test {
      */
     @Test
     void hasOverlappingMeeting() {
-        /*
-        fixme:
-        Assert.assertTrue(this.calendar.hasOverlappingMeeting(
-                LocalDate.of(2017, 7, 7),
-                LocalTime.NOON,
-                Duration.ofHours(1)));*/
+        Assertions.assertThat(
+                this.calendar.hasOverlappingMeeting(
+                        LocalDate.of(2017, 7, 7),
+                        LocalTime.NOON,
+                        Duration.ofHours(1)
+                )).isTrue();
     }
 
     @Test
     void getMeetingsForDate() {
-        /*
-        fixme:
         var meetingsForJuly6 = this.calendar.getMeetingsForDate(LocalDate.of(2017, 7, 6));
-        Verify.assertSize(1, meetingsForJuly6);
-        System.out.println(meetingsForJuly6);*/
+        Assertions.assertThat((Iterable<Meeting>) meetingsForJuly6).hasSize(1);
+        System.out.println(meetingsForJuly6);
     }
 
     @Test
     void getMeetingsForWorkWeekOf() {
-        /*
-        fixme:
         var workWeek = this.calendar.getMeetingsForWorkWeekOf(LocalDate.of(2017, 7, 6));
-        Assert.assertEquals(4, workWeek.getNumberOfMeetings());
-        System.out.println(workWeek);*/
+        Assertions.assertThat(workWeek.getNumberOfMeetings()).isEqualTo(4);
+        System.out.println(workWeek);
     }
 
     @Test
     void getMeetingsForFullWeekOf() {
-        /*
-        fixme:
         var fullWeek = this.calendar.getMeetingsForFullWeekOf(LocalDate.of(2017, 7, 6));
-        Assert.assertEquals(6, fullWeek.getNumberOfMeetings());
-        System.out.println(fullWeek);*/
+        Assertions.assertThat(fullWeek.getNumberOfMeetings()).isEqualTo(6);
+        System.out.println(fullWeek);
     }
 
     @Test
     void getMeetingsForMonthOf() {
-        /*
-        fixme:
         var fullMonth = this.calendar.getMeetingsForYearMonth(2017, Month.JULY);
-        Assert.assertEquals(6, fullMonth.getNumberOfMeetings());
-        System.out.println(fullMonth);*/
+        Assertions.assertThat(fullMonth.getNumberOfMeetings()).isEqualTo(6);
+        System.out.println(fullMonth);
     }
 
     @Test
     void getAvailableTimeslots() {
-        /*
-        fixme:
         var availableTimeslots1 = this.calendar.getAvailableTimeslots(LocalDate.of(2017, 7, 6));
-        Assert.assertEquals(2, availableTimeslots1.size());
+        Assertions.assertThat(availableTimeslots1.size()).isEqualTo(2);
         System.out.println(availableTimeslots1);
         var availableTimeslots2 = this.calendar.getAvailableTimeslots(LocalDate.of(2017, 7, 1));
-        Assert.assertEquals(1, availableTimeslots2.size());
-        System.out.println(availableTimeslots2);*/
+        Assertions.assertThat(availableTimeslots2.size()).isEqualTo(1);
+        System.out.println(availableTimeslots2);
     }
 }

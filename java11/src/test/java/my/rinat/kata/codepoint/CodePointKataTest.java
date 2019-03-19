@@ -1,5 +1,6 @@
 package my.rinat.kata.codepoint;
 
+import org.assertj.core.api.Assertions;
 import org.eclipse.collections.api.bag.primitive.CharBag;
 import org.eclipse.collections.api.list.ImmutableList;
 import org.eclipse.collections.impl.factory.primitive.CharBags;
@@ -29,8 +30,7 @@ class CodePointKataTest {
         // Hint: Look at ImmutableList.each(Procedure) or ImmutableList.injectInto(IV, Function2)
         var characters = CharBags.mutable.empty();
 
-        // fixme:
-        // Assert.assertTrue(this.expectedBagOfCharacters(characters));
+        Assertions.assertThat(this.expectedBagOfCharacters(characters)).isTrue();
 
         // Output the list of strings to a file and read the secret message
         // Hint: Look at Files.write() or FileWriter
@@ -70,14 +70,8 @@ class CodePointKataTest {
 
     @Test
     void codePointsToHelloWorldHowAreYou() {
-        /*
-        fixme:
-        Assert.assertEquals(
-                "Hello World!",
-                this.convertCodePointsToString(72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33));
-        Assert.assertEquals(
-                "How are you?",
-                this.convertCodePointsToString(72, 111, 119, 32, 97, 114, 101, 32, 121, 111, 117, 63));*/
+        Assertions.assertThat(this.convertCodePointsToString(72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33)).isEqualTo("Hello World!");
+        Assertions.assertThat(this.convertCodePointsToString(72, 111, 119, 32, 97, 114, 101, 32, 121, 111, 117, 63)).isEqualTo("How are you?");
     }
 
     private String convertCodePointsToString(int... codePoints) {

@@ -1,5 +1,8 @@
 package my.rinat.kata.collections.company;
 
+import java.util.Collections;
+import java.util.Map;
+
 import org.assertj.core.api.Assertions;
 import org.eclipse.collections.api.RichIterable;
 import org.eclipse.collections.api.bag.sorted.MutableSortedBag;
@@ -14,10 +17,9 @@ import org.eclipse.collections.api.list.primitive.MutableDoubleList;
 import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.api.map.primitive.ObjectDoubleMap;
 import org.eclipse.collections.api.multimap.list.MutableListMultimap;
+import org.eclipse.collections.impl.factory.Lists;
 import org.eclipse.collections.impl.factory.SortedBags;
 import org.junit.jupiter.api.Test;
-
-import java.util.Collections;
 
 /**
  * Below are links to APIs that may be helpful during these exercises.
@@ -123,7 +125,7 @@ class Exercise8Test extends CompanyDomainForKata {
 
         MutableSortedBag<Double> expectedPrices = SortedBags.mutable.with(
                 Collections.reverseOrder(), 500.0, 150.0, 120.0, 75.0, 50.0, 50.0, 12.5);
-        // fixme: Verify.assertSortedBagsEqual(expectedPrices, orderedPrices);
+        Assertions.assertThat((Iterable<Double>) orderedPrices).isEqualTo(expectedPrices);
     }
 
     /**
@@ -147,10 +149,10 @@ class Exercise8Test extends CompanyDomainForKata {
         MutableMap<String, MutableList<Order>> customerNameToOrders =
                 this.company.getCustomers().toMap(null, null);
 
-        // fixme: Assert.assertNotNull("customer name to orders", customerNameToOrders);
-        // fixme: Verify.assertSize("customer names", 3, customerNameToOrders);
+        Assertions.assertThat((Map<String, MutableList<Order>>) customerNameToOrders).isNotNull();
+        Assertions.assertThat((Map<String, MutableList<Order>>) customerNameToOrders).hasSize(3);
         MutableList<Order> ordersForBill = customerNameToOrders.get("Bill");
-        // fixme: Verify.assertSize("Bill orders", 3, ordersForBill);
+        Assertions.assertThat(ordersForBill).hasSize(3);
     }
 
     /**
@@ -160,15 +162,12 @@ class Exercise8Test extends CompanyDomainForKata {
     @Test
     void mostExpensiveItem() {
         MutableListMultimap<Double, Customer> multimap = null;
-        // fixme: Verify.assertSize(3, multimap);
-        // fixme: Verify.assertSize(2, multimap.keysView());
+        Assertions.assertThat(multimap.size()).isEqualTo(3);
+        Assertions.assertThat(multimap.keysView()).hasSize(2);
 
-        /* fixme:
-        Assert.assertEquals(
-                Lists.mutable.with(
+        Assertions.assertThat(multimap.get(50.0))
+                .isEqualTo(Lists.mutable.with(
                         this.company.getCustomerNamed("Fred"),
-                        this.company.getCustomerNamed("Bill")),
-                multimap.get(50.0));
-         */
+                        this.company.getCustomerNamed("Bill")));
     }
 }

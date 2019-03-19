@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.assertj.core.api.Assertions;
+import org.eclipse.collections.impl.list.Interval;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -44,11 +46,9 @@ class FunctionalInterfaceTest {
             }
         };
         consumer.accept("zero");
-        // fixme:
-        // Assert.assertEquals(List.of("ZERO"), result);
+        Assertions.assertThat(result).isEqualTo(List.of("ZERO"));
         strings.forEach(consumer);
-        // fixme:
-        // Assert.assertEquals(List.of("ZERO", "ONE", "TWO", "THREE"), result);
+        Assertions.assertThat(result).isEqualTo(List.of("ZERO", "ONE", "TWO", "THREE"));
     }
 
     @Test
@@ -62,15 +62,13 @@ class FunctionalInterfaceTest {
                 return integer % 2 == 0;
             }
         };
-        // fixme:
-        // Assert.assertTrue(evenPredicate.test(2));
-//        Assert.assertFalse(evenPredicate.test(1));
+        Assertions.assertThat(evenPredicate.test(2)).isTrue();
+        Assertions.assertThat(evenPredicate.test(1)).isFalse();
         var evens = numbers.stream().filter(evenPredicate).collect(Collectors.toList());
-        // fixme:
-        // Assert.assertTrue(evens.stream().allMatch(evenPredicate));
-//        Assert.assertFalse(evens.stream().noneMatch(evenPredicate));
-//        Assert.assertTrue(evens.stream().anyMatch(evenPredicate));
-//        Assert.assertEquals(Interval.evensFromTo(1, 10), evens);
+        Assertions.assertThat(evens.stream().allMatch(evenPredicate)).isTrue();
+        Assertions.assertThat(evens.stream().noneMatch(evenPredicate)).isFalse();
+        Assertions.assertThat(evens.stream().anyMatch(evenPredicate)).isTrue();
+        Assertions.assertThat(evens).isEqualTo(Interval.evensFromTo(1, 10));
     }
 
     @Test
@@ -84,15 +82,13 @@ class FunctionalInterfaceTest {
                 return integer % 2 == 1;
             }
         };
-        // fixme:
-        // Assert.assertFalse(oddPredicate.test(2));
-//        Assert.assertTrue(oddPredicate.test(1));
+        Assertions.assertThat(oddPredicate.test(2)).isFalse();
+        Assertions.assertThat(oddPredicate.test(1)).isTrue();
         var odds = numbers.stream().filter(oddPredicate).collect(Collectors.toList());
-        // fixme:
-        // Assert.assertTrue(odds.stream().allMatch(oddPredicate));
-//        Assert.assertFalse(odds.stream().noneMatch(oddPredicate));
-//        Assert.assertTrue(odds.stream().anyMatch(oddPredicate));
-//        Assert.assertEquals(Interval.oddsFromTo(1, 10), odds);
+        Assertions.assertThat(odds.stream().allMatch(oddPredicate)).isTrue();
+        Assertions.assertThat(odds.stream().noneMatch(oddPredicate)).isFalse();
+        Assertions.assertThat(odds.stream().anyMatch(oddPredicate)).isTrue();
+        Assertions.assertThat(odds).isEqualTo(Interval.oddsFromTo(1, 10));
     }
 
     @Test
@@ -104,12 +100,10 @@ class FunctionalInterfaceTest {
                 return s.toUpperCase();
             }
         };
-        // fixme:
-        // Assert.assertEquals("UPPERCASE", toUppercase.apply("uppercase"));
+        Assertions.assertThat(toUppercase.apply("uppercase")).isEqualTo("UPPERCASE");
         List<String> lowercase = List.of("a", "b", "c", "d");
         Set<String> uppercase = lowercase.stream().map(toUppercase).collect(Collectors.toSet());
-        // fixme:
-        // Assert.assertEquals(Set.of("A", "B", "C", "D"), uppercase);
+        Assertions.assertThat(uppercase).isEqualTo(Set.of("A", "B", "C", "D"));
     }
 
     @Test
@@ -121,12 +115,10 @@ class FunctionalInterfaceTest {
                 return new CopyOnWriteArrayList<String>();
             }
         };
-        // fixme:
-        // Assert.assertEquals(new CopyOnWriteArrayList<>(), supplier.get());
-//        Assert.assertNotSame(supplier.get(), supplier.get());
+        Assertions.assertThat(supplier.get()).isEqualTo(new CopyOnWriteArrayList<>());
+        Assertions.assertThat(supplier.get()).isNotEqualTo(supplier.get());
         List<String> list = Stream.of("1", "2", "3").collect(Collectors.toCollection(supplier));
-        // fixme:
-        // Assert.assertEquals(List.of("1", "2", "3"), list);
+        Assertions.assertThat(list).isEqualTo(List.of("1", "2", "3"));
     }
 
     @Test
@@ -140,16 +132,11 @@ class FunctionalInterfaceTest {
             }
         };
         biConsumer.accept("a", "one");
-        // fixme:
-        // Assert.assertEquals(Map.of("A", "ONE"), result);
+        Assertions.assertThat(result).isEqualTo(Map.of("A", "ONE"));
 
         var lowercaseMap = Map.of("a", "one", "b", "two", "c", "three");
         lowercaseMap.forEach(biConsumer);
-        /*
-        fixme:
-        Assert.assertEquals(
-                Map.of("A", "ONE", "B", "TWO", "C", "THREE"),
-                result);*/
+        Assertions.assertThat(result).isEqualTo(Map.of("A", "ONE", "B", "TWO", "C", "THREE"));
     }
 
     @Test
@@ -161,21 +148,17 @@ class FunctionalInterfaceTest {
                 return integer * integer;
             }
         };
-        // fixme:
-        // Assert.assertEquals(Integer.valueOf(4), squared.apply(2));
-//        Assert.assertEquals(Integer.valueOf(9), squared.apply(3));
-//        Assert.assertEquals(Integer.valueOf(16), squared.apply(4));
+        Assertions.assertThat(squared.apply(2)).isEqualTo(Integer.valueOf(4));
+        Assertions.assertThat(squared.apply(3)).isEqualTo(Integer.valueOf(9));
+        Assertions.assertThat(squared.apply(4)).isEqualTo(Integer.valueOf(16));
 
         // TODO - Convert the anonymous inner class to a lambda
-        /*
-        fixme
-        Assert.assertTrue(Stream.iterate(2, squared).anyMatch(new Predicate<Integer>()
-        {
-            @Override
-            public boolean test(Integer i)
-            {
-                return i.equals(Integer.valueOf(256));
-            }
-        }));*/
+        Assertions.assertThat(
+                Stream.iterate(2, squared).anyMatch(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer i) {
+                        return i.equals(Integer.valueOf(256));
+                    }
+                })).isTrue();
     }
 }

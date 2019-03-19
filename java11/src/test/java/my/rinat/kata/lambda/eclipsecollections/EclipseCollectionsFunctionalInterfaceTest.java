@@ -1,9 +1,12 @@
 package my.rinat.kata.lambda.eclipsecollections;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.assertj.core.api.Assertions;
 import org.eclipse.collections.api.block.function.Function;
 import org.eclipse.collections.api.block.function.Function0;
 import org.eclipse.collections.api.block.predicate.Predicate;
@@ -42,11 +45,9 @@ class EclipseCollectionsFunctionalInterfaceTest {
             }
         };
         procedure.accept("zero");
-        // fixme:
-        // Assert.assertEquals(Lists.mutable.with("ZERO"), result);
+        Assertions.assertThat(result).isEqualTo(Lists.mutable.with("ZERO"));
         strings.each(procedure);
-        // fixme:
-        // Assert.assertEquals(Lists.mutable.with("ZERO", "ONE", "TWO", "THREE"), result);
+        Assertions.assertThat(result).isEqualTo(Lists.mutable.with("ZERO", "ONE", "TWO", "THREE"));
     }
 
     @Test
@@ -60,18 +61,16 @@ class EclipseCollectionsFunctionalInterfaceTest {
                 return integer % 2 == 0;
             }
         };
-        // fixme:
-        // Assert.assertTrue(evenPredicate.test(2));
-        // Assert.assertFalse(evenPredicate.test(1));
+        Assertions.assertThat(evenPredicate.test(2)).isTrue();
+        Assertions.assertThat(evenPredicate.test(1)).isFalse();
         MutableList<Integer> evens = numbers.select(evenPredicate);
-        // fixme:
-        // Assert.assertTrue(evens.allSatisfy(evenPredicate));
-        // Assert.assertTrue(evens.stream().allMatch(evenPredicate));
-        // Assert.assertFalse(evens.noneSatisfy(evenPredicate));
-        // Assert.assertFalse(evens.stream().noneMatch(evenPredicate));
-        // Assert.assertTrue(evens.anySatisfy(evenPredicate));
-        // Assert.assertTrue(evens.stream().anyMatch(evenPredicate));
-        // Assert.assertEquals(Interval.evensFromTo(1, 10), evens);
+        Assertions.assertThat(evens.allSatisfy(evenPredicate)).isTrue();
+        Assertions.assertThat(evens.stream().allMatch(evenPredicate)).isTrue();
+        Assertions.assertThat(evens.noneSatisfy(evenPredicate)).isFalse();
+        Assertions.assertThat(evens.stream().noneMatch(evenPredicate)).isFalse();
+        Assertions.assertThat(evens.anySatisfy(evenPredicate)).isTrue();
+        Assertions.assertThat(evens.stream().anyMatch(evenPredicate)).isTrue();
+        Assertions.assertThat(evens).isEqualTo(Interval.evensFromTo(1, 10));
     }
 
     @Test
@@ -85,18 +84,16 @@ class EclipseCollectionsFunctionalInterfaceTest {
                 return integer % 2 == 1;
             }
         };
-        // fixme:
-        // Assert.assertFalse(oddPredicate.test(2));
-        // Assert.assertTrue(oddPredicate.test(1));
+        Assertions.assertThat(oddPredicate.test(2)).isFalse();
+        Assertions.assertThat(oddPredicate.test(1)).isTrue();
         MutableList<Integer> odds = numbers.select(oddPredicate);
-        // fixme:
-        // Assert.assertTrue(odds.allSatisfy(oddPredicate));
-        // Assert.assertTrue(odds.stream().allMatch(oddPredicate));
-        // Assert.assertFalse(odds.noneSatisfy(oddPredicate));
-        // Assert.assertFalse(odds.stream().noneMatch(oddPredicate));
-        // Assert.assertTrue(odds.stream().anyMatch(oddPredicate));
-        // Assert.assertTrue(odds.anySatisfy(oddPredicate));
-        // Assert.assertEquals(Interval.oddsFromTo(1, 10), odds);
+        Assertions.assertThat(odds.allSatisfy(oddPredicate)).isTrue();
+        Assertions.assertThat(odds.stream().allMatch(oddPredicate)).isTrue();
+        Assertions.assertThat(odds.noneSatisfy(oddPredicate)).isFalse();
+        Assertions.assertThat(odds.stream().noneMatch(oddPredicate)).isFalse();
+        Assertions.assertThat(odds.stream().anyMatch(oddPredicate)).isTrue();
+        Assertions.assertThat(odds.anySatisfy(oddPredicate)).isTrue();
+        Assertions.assertThat(odds).isEqualTo(Interval.oddsFromTo(1, 10));
     }
 
     @Test
@@ -108,12 +105,10 @@ class EclipseCollectionsFunctionalInterfaceTest {
                 return string.toUpperCase();
             }
         };
-        // fixme:
-        // Assert.assertEquals("UPPERCASE", toUppercase.apply("uppercase"));
+        Assertions.assertThat(toUppercase.apply("uppercase")).isEqualTo("UPPERCASE");
         MutableList<String> lowercase = Lists.mutable.with("a", "b", "c", "d");
         MutableList<String> uppercase = lowercase.collect(toUppercase);
-        // fixme:
-        // Assert.assertEquals(Arrays.asList("A", "B", "C", "D"), uppercase);
+        Assertions.assertThat(uppercase).isEqualTo(Arrays.asList("A", "B", "C", "D"));
     }
 
     @Test
@@ -125,12 +120,10 @@ class EclipseCollectionsFunctionalInterfaceTest {
                 return FastList.newList();
             }
         };
-        // fixme:
-        // Assert.assertEquals(Lists.mutable.empty(), supplier.get());
-        // Assert.assertNotSame(supplier.get(), supplier.get());
+        Assertions.assertThat(supplier.get()).isEqualTo(Lists.mutable.empty());
+        Assertions.assertThat(supplier.get()).isNotEqualTo(supplier.get());
         List<String> list = Stream.of("1", "2", "3").collect(Collectors.toCollection(supplier));
-        // fixme:
-        // Assert.assertEquals(Lists.mutable.with("1", "2", "3"), list);
+        Assertions.assertThat(list).isEqualTo(Lists.mutable.with("1", "2", "3"));
     }
 
     @Test
@@ -144,10 +137,8 @@ class EclipseCollectionsFunctionalInterfaceTest {
             }
         };
         procedure2.accept("a", "one");
-        // fixme:
-        // Assert.assertEquals(Maps.mutable.with("A", "ONE"), result);
+        Assertions.assertThat((Map<Object, Object>) result).isEqualTo(Maps.mutable.with("A", "ONE"));
         Maps.mutable.with("b", "two", "c", "three").forEachKeyValue(procedure2);
-        // fixme:
-        // Assert.assertEquals(Maps.mutable.with("A", "ONE", "B", "TWO", "C", "THREE"), result);
+        Assertions.assertThat((Map<Object, Object>) result).isEqualTo(Maps.mutable.with("A", "ONE", "B", "TWO", "C", "THREE"));
     }
 }

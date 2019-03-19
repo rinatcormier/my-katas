@@ -2,7 +2,11 @@ package my.rinat.kata.lambda.eclipsecollections;
 
 import java.util.concurrent.atomic.DoubleAdder;
 import java.util.concurrent.atomic.LongAdder;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
+import org.assertj.core.api.Assertions;
 import org.eclipse.collections.api.block.predicate.primitive.DoublePredicate;
 import org.eclipse.collections.api.block.predicate.primitive.IntPredicate;
 import org.eclipse.collections.api.block.predicate.primitive.LongPredicate;
@@ -11,6 +15,7 @@ import org.eclipse.collections.api.block.procedure.primitive.IntProcedure;
 import org.eclipse.collections.api.block.procedure.primitive.LongProcedure;
 import org.eclipse.collections.api.list.primitive.ImmutableIntList;
 import org.eclipse.collections.impl.factory.primitive.DoubleLists;
+import org.eclipse.collections.impl.factory.primitive.IntLists;
 import org.eclipse.collections.impl.factory.primitive.LongLists;
 import org.eclipse.collections.impl.list.primitive.IntInterval;
 import org.junit.jupiter.api.Test;
@@ -27,8 +32,7 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
             }
         };
         IntInterval.oneTo(5).forEach(procedure);
-        // fixme:
-        // Assert.assertEquals(15, adder.longValue());
+        Assertions.assertThat(adder.longValue()).isEqualTo(15);
     }
 
     @Test
@@ -42,8 +46,7 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
             }
         };
         LongLists.mutable.with(1, 2, 3, 4, 5).forEach(procedure);
-        // fixme:
-        // Assert.assertEquals(15, adder.longValue());
+        Assertions.assertThat(adder.longValue()).isEqualTo(15);
     }
 
     @Test
@@ -57,8 +60,7 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
             }
         };
         DoubleLists.mutable.with(1.0d, 2.0d, 3.0d, 4.0d, 5.0d).forEach(procedure);
-        // fixme:
-        // Assert.assertEquals(15.0, adder.doubleValue(), 0.0);
+        Assertions.assertThat(adder.doubleValue()).isEqualTo(15.0, Assertions.within(0.0));
     }
 
     @Test
@@ -72,21 +74,17 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
         };
         IntInterval interval = IntInterval.oneTo(5);
         ImmutableIntList evens = interval.select(predicate);
-        /*
-        fixme:
-        Assert.assertEquals(IntLists.mutable.with(2, 4), evens);
-        Assert.assertEquals(IntInterval.evensFromTo(1, 5), evens);*/
+        Assertions.assertThat(evens).isEqualTo(IntLists.mutable.with(2, 4));
+        Assertions.assertThat(evens).isEqualTo(IntInterval.evensFromTo(1, 5));
         ImmutableIntList odds = interval.reject(predicate);
-        /*
-        fixme:
-        Assert.assertEquals(IntLists.mutable.with(1, 3, 5), odds);
-        Assert.assertEquals(IntInterval.oddsFromTo(1, 5), odds);
-        Assert.assertTrue(interval.anySatisfy(predicate));
-        Assert.assertFalse(interval.allSatisfy(predicate));
-        Assert.assertFalse(interval.noneSatisfy(predicate));
-        Assert.assertTrue(IntStream.rangeClosed(1, 5).anyMatch(predicate));
-        Assert.assertFalse(IntStream.rangeClosed(1, 5).allMatch(predicate));
-        Assert.assertFalse(IntStream.rangeClosed(1, 5).noneMatch(predicate));*/
+        Assertions.assertThat(odds).isEqualTo(IntLists.mutable.with(1, 3, 5));
+        Assertions.assertThat(odds).isEqualTo(IntInterval.oddsFromTo(1, 5));
+        Assertions.assertThat(interval.anySatisfy(predicate)).isTrue();
+        Assertions.assertThat(interval.allSatisfy(predicate)).isFalse();
+        Assertions.assertThat(interval.noneSatisfy(predicate)).isFalse();
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).allMatch(predicate)).isFalse();
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).noneMatch(predicate)).isFalse();
     }
 
     @Test
@@ -100,18 +98,15 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
         };
         var list = LongLists.mutable.with(1, 2, 3, 4, 5);
         var evens = list.select(predicate);
-        // fixme:
-        // Assert.assertEquals(LongLists.mutable.with(2, 4), evens);
+        Assertions.assertThat(evens).isEqualTo(LongLists.mutable.with(2, 4));
         var odds = list.reject(predicate);
-        /*
-        fixme:
-        Assert.assertEquals(LongLists.mutable.with(1, 3, 5), odds);
-        Assert.assertTrue(list.anySatisfy(predicate));
-        Assert.assertFalse(list.allSatisfy(predicate));
-        Assert.assertFalse(list.noneSatisfy(predicate));
-        Assert.assertTrue(LongStream.rangeClosed(1, 5).anyMatch(predicate));
-        Assert.assertFalse(LongStream.rangeClosed(1, 5).allMatch(predicate));
-        Assert.assertFalse(LongStream.rangeClosed(1, 5).noneMatch(predicate));*/
+        Assertions.assertThat(odds).isEqualTo(LongLists.mutable.with(1, 3, 5));
+        Assertions.assertThat(list.anySatisfy(predicate)).isTrue();
+        Assertions.assertThat(list.allSatisfy(predicate)).isFalse();
+        Assertions.assertThat(list.noneSatisfy(predicate)).isFalse();
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).allMatch(predicate)).isFalse();
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).noneMatch(predicate)).isFalse();
     }
 
     @Test
@@ -125,14 +120,11 @@ class EclipseCollectionsPrimitiveFunctionalInterfaceTest {
         };
         var list = DoubleLists.mutable.with(1.0, 2.0, 3.0, 4.0, 5.0);
         var greaterThan = list.select(predicate);
-        // fixme:
-        // Assert.assertEquals(DoubleLists.mutable.with(4.0d, 5.0d), greaterThan);
+        Assertions.assertThat(greaterThan).isEqualTo(DoubleLists.mutable.with(4.0d, 5.0d));
         var lessThanEqualTo = list.reject(predicate);
-        /*
-        fixme:
-        Assert.assertEquals(DoubleLists.mutable.with(1.0d, 2.0d, 3.0d), lessThanEqualTo);
-        Assert.assertTrue(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).anyMatch(predicate));
-        Assert.assertFalse(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).allMatch(predicate));
-        Assert.assertFalse(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).noneMatch(predicate));*/
+        Assertions.assertThat(lessThanEqualTo).isEqualTo(DoubleLists.mutable.with(1.0d, 2.0d, 3.0d));
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).allMatch(predicate)).isFalse();
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).noneMatch(predicate)).isFalse();
     }
 }

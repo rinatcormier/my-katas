@@ -4,11 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.assertj.core.api.Assertions;
+import org.eclipse.collections.impl.block.factory.Functions;
 import org.eclipse.collections.impl.list.Interval;
 import org.junit.jupiter.api.Test;
 
@@ -32,17 +37,15 @@ class ClassicSAMInterfaceTest {
                 return one.compareTo(two);
             }
         };
-        // fixme:
-        // Assert.assertEquals(0, comparator.compare(1, 1));
-//        Assert.assertEquals(-1, comparator.compare(1, 2));
-//        Assert.assertEquals(1, comparator.compare(3, 2));
+        Assertions.assertThat(comparator.compare(1, 1)).isEqualTo(0);
+        Assertions.assertThat(comparator.compare(1, 2)).isEqualTo(-1);
+        Assertions.assertThat(comparator.compare(3, 2)).isEqualTo(1);
 
         var integers = IntStream.rangeClosed(1, 5).boxed().collect(Collectors.toList());
         Collections.shuffle(integers);
         integers.sort(comparator);
 
-        // fixme:
-        // Assert.assertEquals(List.of(1, 2, 3, 4, 5), integers);
+        Assertions.assertThat(integers).isEqualTo(List.of(1, 2, 3, 4, 5));
     }
 
     @Test
@@ -57,8 +60,7 @@ class ClassicSAMInterfaceTest {
             }
         };
         runnable.run();
-        // fixme:
-        // Assert.assertEquals(List.of(1), list);
+        Assertions.assertThat(list).isEqualTo(List.of(1));
         // TODO - convert the anonymous Inner class to a lambda
         Interval.fromTo(2, 10).run(new Runnable() {
             @Override
@@ -67,8 +69,7 @@ class ClassicSAMInterfaceTest {
             }
         });
         var expectedList = Collections.nCopies(10, 1);
-        // fixme:
-        // Assert.assertEquals(expectedList, list);
+        Assertions.assertThat(list).isEqualTo(expectedList);
     }
 
     @Test
@@ -82,17 +83,15 @@ class ClassicSAMInterfaceTest {
                 return set.add(1);
             }
         };
-        // fixme:
-        // Assert.assertTrue(callable.call());
-//        Assert.assertEquals(Set.of(1), set);
+        Assertions.assertThat(callable.call()).isTrue();
+        Assertions.assertThat(set).isEqualTo(Set.of(1));
 
         var executor = Executors.newWorkStealingPool();
         var futures = executor.invokeAll(Collections.nCopies(5, callable));
 
         // Note: Functions.throwing() is a utility method in Eclipse Collections without which we would
         // have to wrap the call to Future.get() in a try-catch block.
-        // fixme:
-        // Assert.assertTrue(futures.stream().map(Functions.throwing(Future::get)).noneMatch(b -> b));
-//        Assert.assertEquals(Set.of(1), set);
+        Assertions.assertThat(futures.stream().map(Functions.throwing(Future::get)).noneMatch(b -> b)).isTrue();
+        Assertions.assertThat(set).isEqualTo(Set.of(1));
     }
 }

@@ -1,8 +1,12 @@
 package my.rinat.kata.collections.deckofcards.list.immutable;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Random;
+
+import my.rinat.kata.collections.deckofcards.Rank;
+import my.rinat.kata.collections.deckofcards.Suit;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 class EclipseCollectionsDeckOfCardsAsListTest {
     private EclipseCollectionsDeckOfCardsAsList ecDeck = new EclipseCollectionsDeckOfCardsAsList();
@@ -10,48 +14,41 @@ class EclipseCollectionsDeckOfCardsAsListTest {
 
     @Test
     void allCards() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.getCards(), this.ecDeck.getCards());
+        Assertions.assertThat(this.ecDeck.getCards()).isEqualTo(this.jdkDeck.getCards());
     }
 
     @Test
     void cardsAreImmutable() {
         var ecCards = this.ecDeck.getCards().castToList();
-        /*
-        fixme:
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ecCards.remove(0));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                ecCards::clear);
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ecCards.add(null));*/
+
+        Executable remove = () -> ecCards.remove(0);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable clear = ecCards::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
+
+        Executable add = () -> ecCards.add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
     }
 
     @Test
     void diamonds() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.diamonds(), this.ecDeck.diamonds());
+        Assertions.assertThat(this.ecDeck.diamonds()).isEqualTo(this.jdkDeck.diamonds());
     }
 
     @Test
     void hearts() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.hearts(), this.ecDeck.hearts());
+        Assertions.assertThat(this.ecDeck.hearts()).isEqualTo(this.jdkDeck.hearts());
     }
 
     @Test
     void spades() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.spades(), this.ecDeck.spades());
+        Assertions.assertThat(this.ecDeck.spades()).isEqualTo(this.jdkDeck.spades());
     }
 
     @Test
     void clubs() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.clubs(), this.ecDeck.clubs());
+        Assertions.assertThat(this.ecDeck.clubs()).isEqualTo(this.jdkDeck.clubs());
     }
 
     @Test
@@ -61,16 +58,14 @@ class EclipseCollectionsDeckOfCardsAsListTest {
 
         var ecHand = this.ecDeck.deal(ecShuffle, 5);
         var jdkHand = this.jdkDeck.deal(jdkShuffle, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHand, ecHand);
+        Assertions.assertThat(ecHand).isEqualTo(jdkHand);
     }
 
     @Test
     void shuffleAndDealHands() {
         var ecHands = this.ecDeck.shuffleAndDeal(new Random(1), 5, 5);
         var jdkHands = this.jdkDeck.shuffleAndDeal(new Random(1), 5, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHands, ecHands);
+        Assertions.assertThat(ecHands).isEqualTo(jdkHands);
     }
 
     @Test
@@ -79,49 +74,37 @@ class EclipseCollectionsDeckOfCardsAsListTest {
         var jdkShuffled = this.jdkDeck.shuffle(new Random(1));
         var ecHands = this.ecDeck.dealHands(ecShuffled, 5, 5);
         var jdkHands = this.jdkDeck.dealHands(jdkShuffled, 5, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHands, ecHands);
+        Assertions.assertThat(ecHands).isEqualTo(jdkHands);
     }
 
     @Test
     void cardsBySuit() {
         var ecCardsBySuit = this.ecDeck.getCardsBySuit();
         var jdkCardsBySuit = this.jdkDeck.getCardsBySuit();
-        // fixme:
-        // Assert.assertEquals(jdkCardsBySuit.get(Suit.CLUBS), ecCardsBySuit.get(Suit.CLUBS));
+        Assertions.assertThat(ecCardsBySuit.get(Suit.CLUBS)).isEqualTo(jdkCardsBySuit.get(Suit.CLUBS));
     }
 
     @Test
     void cardsBySuitIsImmutable() {
         var ecCardsBySuit = this.ecDeck.getCardsBySuit();
-        /*
-        fixme:
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ecCardsBySuit.get(Suit.CLUBS).castToList().remove(0));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ecCardsBySuit.get(Suit.CLUBS).castToList().add(null));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                ecCardsBySuit.get(Suit.CLUBS).castToList()::clear);*/
+
+        Executable remove = () -> ecCardsBySuit.get(Suit.CLUBS).castToList().remove(0);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable add = () -> ecCardsBySuit.get(Suit.CLUBS).castToList().add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
+
+        Executable clear = ecCardsBySuit.get(Suit.CLUBS).castToList()::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
     }
 
     @Test
     void countsBySuit() {
-        /*
-        fixme:
-        Assert.assertEquals(
-                this.jdkDeck.countsBySuit().get(Suit.CLUBS).intValue(),
-                this.ecDeck.countsBySuit().occurrencesOf(Suit.CLUBS));*/
+        Assertions.assertThat(this.ecDeck.countsBySuit().occurrencesOf(Suit.CLUBS)).isEqualTo(this.jdkDeck.countsBySuit().get(Suit.CLUBS).intValue());
     }
 
     @Test
     void countsByRank() {
-        /*
-        fixme:
-        Assert.assertEquals(
-                this.jdkDeck.countsByRank().get(Rank.TEN).intValue(),
-                this.ecDeck.countsByRank().occurrencesOf(Rank.SEVEN));*/
+        Assertions.assertThat(this.ecDeck.countsByRank().occurrencesOf(Rank.SEVEN)).isEqualTo(this.jdkDeck.countsByRank().get(Rank.TEN).intValue());
     }
 }

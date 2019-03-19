@@ -1,142 +1,124 @@
 package my.rinat.kata.collections.deckofcards.list.immutable;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Random;
+
+import my.rinat.kata.collections.deckofcards.Card;
+import my.rinat.kata.collections.deckofcards.Rank;
+import my.rinat.kata.collections.deckofcards.Suit;
+import org.assertj.core.api.Assertions;
+import org.eclipse.collections.impl.utility.Iterate;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 class JDKImperativeDeckOfCardsAsListTest {
     private JDKImperativeDeckOfCardsAsList jdkDeck = new JDKImperativeDeckOfCardsAsList();
 
     @Test
     void allCards() {
-        /*
-        fixme:
-        Assert.assertEquals(52, this.jdkDeck.getCards().size());
-        Assert.assertEquals(new Card(Rank.ACE, Suit.SPADES), this.jdkDeck.getCards().get(0));
-        Assert.assertEquals(new Card(Rank.KING, Suit.CLUBS), this.jdkDeck.getCards().get(51));*/
+        Assertions.assertThat(this.jdkDeck.getCards().size()).isEqualTo(52);
+        Assertions.assertThat(this.jdkDeck.getCards().get(0)).isEqualTo(new Card(Rank.ACE, Suit.SPADES));
+        Assertions.assertThat(this.jdkDeck.getCards().get(51)).isEqualTo(new Card(Rank.KING, Suit.CLUBS));
     }
 
     @Test
     void cardsAreImmutable() {
         var jdkCards = this.jdkDeck.getCards();
-        /*
-        fixme:
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> jdkCards.remove(0));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                jdkCards::clear);
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> jdkCards.add(null));*/
+
+        Executable remove = () -> jdkCards.remove(0);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable clear = jdkCards::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
+
+        Executable add = () -> jdkCards.add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
     }
 
     @Test
     void diamonds() {
-        /*
-        fixme
-        Assert.assertEquals(13, this.jdkDeck.diamonds().size());
-        Assert.assertTrue(Iterate.allSatisfy(this.jdkDeck.diamonds(), Card::isDiamonds));*/
+        Assertions.assertThat(this.jdkDeck.diamonds().size()).isEqualTo(13);
+        Assertions.assertThat(Iterate.allSatisfy(this.jdkDeck.diamonds(), Card::isDiamonds)).isTrue();
     }
 
     @Test
     void hearts() {
-        /*
-        fixme:
-        Assert.assertEquals(13, this.jdkDeck.hearts().size());
-        Assert.assertTrue(Iterate.allSatisfy(this.jdkDeck.hearts(), Card::isHearts));*/
+        Assertions.assertThat(this.jdkDeck.hearts().size()).isEqualTo(13);
+        Assertions.assertThat(Iterate.allSatisfy(this.jdkDeck.hearts(), Card::isHearts)).isTrue();
     }
 
     @Test
     void spades() {
-        /*
-        fixme:
-        Assert.assertEquals(13, this.jdkDeck.spades().size());
-        Assert.assertTrue(Iterate.allSatisfy(this.jdkDeck.spades(), Card::isSpades));*/
+        Assertions.assertThat(this.jdkDeck.spades().size()).isEqualTo(13);
+        Assertions.assertThat(Iterate.allSatisfy(this.jdkDeck.spades(), Card::isSpades)).isTrue();
     }
 
     @Test
     void clubs() {
-        /*
-        fixme:
-        Assert.assertEquals(13, this.jdkDeck.clubs().size());
-        Assert.assertTrue(Iterate.allSatisfy(this.jdkDeck.clubs(), Card::isClubs));*/
+        Assertions.assertThat(this.jdkDeck.clubs().size()).isEqualTo(13);
+        Assertions.assertThat(Iterate.allSatisfy(this.jdkDeck.clubs(), Card::isClubs)).isTrue();
     }
 
     @Test
     void deal() {
         var jdkShuffle = this.jdkDeck.shuffle(new Random(1));
         var jdkHand = this.jdkDeck.deal(jdkShuffle, 5);
-        /*
-        fixme:
-        Assert.assertEquals(5, jdkHand.size());
-        Assert.assertEquals(47, jdkShuffle.size());*/
+        Assertions.assertThat(jdkHand.size()).isEqualTo(5);
+        Assertions.assertThat(jdkShuffle.size()).isEqualTo(47);
     }
 
     @Test
     void shuffleAndDealHands() {
         var jdkHands = this.jdkDeck.shuffleAndDeal(new Random(1), 5, 5);
-        /*
-        fixme:
-        Assert.assertEquals(5, jdkHands.size());
-        Assert.assertTrue(Iterate.allSatisfy(jdkHands, each -> each.size() == 5));*/
+        Assertions.assertThat(jdkHands.size()).isEqualTo(5);
+        Assertions.assertThat(Iterate.allSatisfy(jdkHands, each -> each.size() == 5)).isTrue();
     }
 
     @Test
     void dealHands() {
         var jdkShuffled = this.jdkDeck.shuffle(new Random(1));
         var jdkHands = this.jdkDeck.dealHands(jdkShuffled, 5, 5);
-        /*
-        fixme:
-        Assert.assertEquals(5, jdkHands.size());
-        Assert.assertTrue(Iterate.allSatisfy(jdkHands, each -> each.size() == 5));
-        Assert.assertEquals(27, jdkShuffled.size());*/
+        Assertions.assertThat(jdkHands.size()).isEqualTo(5);
+        Assertions.assertThat(Iterate.allSatisfy(jdkHands, each -> each.size() == 5)).isTrue();
+        Assertions.assertThat(jdkShuffled.size()).isEqualTo(27);
     }
 
     @Test
     void cardsBySuit() {
         var jdkCardsBySuit = this.jdkDeck.getCardsBySuit();
-        /*
-        fixme:
-        Assert.assertEquals(4, jdkCardsBySuit.size());
-        Assert.assertEquals(13, jdkCardsBySuit.get(Suit.CLUBS).size());
-        Assert.assertEquals(13, jdkCardsBySuit.get(Suit.DIAMONDS).size());
-        Assert.assertEquals(13, jdkCardsBySuit.get(Suit.SPADES).size());
-        Assert.assertEquals(13, jdkCardsBySuit.get(Suit.HEARTS).size());*/
+        Assertions.assertThat(jdkCardsBySuit.size()).isEqualTo(4);
+        Assertions.assertThat(jdkCardsBySuit.get(Suit.CLUBS).size()).isEqualTo(13);
+        Assertions.assertThat(jdkCardsBySuit.get(Suit.DIAMONDS).size()).isEqualTo(13);
+        Assertions.assertThat(jdkCardsBySuit.get(Suit.SPADES).size()).isEqualTo(13);
+        Assertions.assertThat(jdkCardsBySuit.get(Suit.HEARTS).size()).isEqualTo(13);
     }
 
     @Test
     void cardsBySuitIsImmutable() {
         var jdkCardsBySuit = this.jdkDeck.getCardsBySuit();
-        /*
-        fixme:
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> jdkCardsBySuit.remove(Suit.CLUBS));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                jdkCardsBySuit::clear);
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> jdkCardsBySuit.get(Suit.CLUBS).remove(0));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> jdkCardsBySuit.get(Suit.CLUBS).add(null));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                jdkCardsBySuit.get(Suit.CLUBS)::clear);*/
+
+        Executable remove = () -> jdkCardsBySuit.remove(Suit.CLUBS);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable clear = jdkCardsBySuit::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
+
+        Executable removeBySuit = () -> jdkCardsBySuit.get(Suit.CLUBS).remove(0);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, removeBySuit);
+
+        Executable add = () -> jdkCardsBySuit.get(Suit.CLUBS).add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
+
+        Executable clearBySuit = jdkCardsBySuit.get(Suit.CLUBS)::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clearBySuit);
     }
 
     @Test
     void countsBySuit() {
-        // fixme:
-        // Assert.assertEquals(Long.valueOf(13), this.jdkDeck.countsBySuit().get(Suit.CLUBS));
+        Assertions.assertThat(this.jdkDeck.countsBySuit().get(Suit.CLUBS)).isEqualTo(Long.valueOf(13));
     }
 
     @Test
     void countsByRank() {
-        // fixme:
-        // Assert.assertEquals(Long.valueOf(4), this.jdkDeck.countsByRank().get(Rank.TEN));
+        Assertions.assertThat(this.jdkDeck.countsByRank().get(Rank.TEN)).isEqualTo(Long.valueOf(4));
     }
 }

@@ -1,10 +1,5 @@
 package my.rinat.kata.collections.deckofcards.sortedset.immutable;
 
-import com.google.common.collect.ImmutableSetMultimap;
-import my.rinat.kata.collections.deckofcards.Card;
-import my.rinat.kata.collections.deckofcards.Suit;
-import org.junit.jupiter.api.Test;
-
 import java.util.Deque;
 import java.util.List;
 import java.util.Map;
@@ -12,54 +7,55 @@ import java.util.Random;
 import java.util.Set;
 import java.util.SortedSet;
 
+import com.google.common.collect.ImmutableSetMultimap;
+import my.rinat.kata.collections.deckofcards.Card;
+import my.rinat.kata.collections.deckofcards.Rank;
+import my.rinat.kata.collections.deckofcards.Suit;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
 class GoogleGuavaDeckOfCardsAsSortedSetTest {
     private JDKImperativeDeckOfCardsAsSortedSet jdkDeck = new JDKImperativeDeckOfCardsAsSortedSet();
     private GoogleGuavaDeckOfCardsAsSortedSet ggDeck = new GoogleGuavaDeckOfCardsAsSortedSet();
 
     @Test
     void allCards() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.getCards(), this.ggDeck.getCards());
+        Assertions.assertThat(this.ggDeck.getCards()).isEqualTo(this.jdkDeck.getCards());
     }
 
     @Test
     void cardsAreImmutable() {
         var ggCards = this.ggDeck.getCards();
-        /*
-        fixme
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ggCards.remove(null));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                ggCards::clear);
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ggCards.add(null));*/
+
+        Executable remove = () -> ggCards.remove(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable clear = ggCards::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
+
+        Executable add = () -> ggCards.add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
     }
 
     @Test
     void diamonds() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.diamonds(), this.ggDeck.diamonds());
+        Assertions.assertThat(this.ggDeck.diamonds()).isEqualTo(this.jdkDeck.diamonds());
     }
 
     @Test
     void hearts() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.hearts(), this.ggDeck.hearts());
+        Assertions.assertThat(this.ggDeck.hearts()).isEqualTo(this.jdkDeck.hearts());
     }
 
     @Test
     void spades() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.spades(), this.ggDeck.spades());
+        Assertions.assertThat(this.ggDeck.spades()).isEqualTo(this.jdkDeck.spades());
     }
 
     @Test
     void clubs() {
-        // fixme:
-        // Assert.assertEquals(this.jdkDeck.clubs(), this.ggDeck.clubs());
+        Assertions.assertThat(this.ggDeck.clubs()).isEqualTo(this.jdkDeck.clubs());
     }
 
     @Test
@@ -69,16 +65,14 @@ class GoogleGuavaDeckOfCardsAsSortedSetTest {
 
         Set<Card> jdkHand = this.jdkDeck.deal(jdkShuffle, 5);
         Set<Card> ggHand = this.ggDeck.deal(ggShuffle, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHand, ggHand);
+        Assertions.assertThat(ggHand).isEqualTo(jdkHand);
     }
 
     @Test
     void shuffleAndDealHands() {
         List<Set<Card>> jdkHands = this.jdkDeck.shuffleAndDeal(new Random(1), 5, 5);
         List<Set<Card>> ggHands = this.ggDeck.shuffleAndDeal(new Random(1), 5, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHands, ggHands);
+        Assertions.assertThat(ggHands).isEqualTo(jdkHands);
     }
 
     @Test
@@ -87,55 +81,43 @@ class GoogleGuavaDeckOfCardsAsSortedSetTest {
         Deque<Card> ggShuffled = this.ggDeck.shuffle(new Random(1));
         List<Set<Card>> jdkHands = this.jdkDeck.dealHands(jdkShuffled, 5, 5);
         List<Set<Card>> ggHands = this.ggDeck.dealHands(ggShuffled, 5, 5);
-        // fixme:
-        // Assert.assertEquals(jdkHands, ggHands);
+        Assertions.assertThat(ggHands).isEqualTo(jdkHands);
     }
 
     @Test
     void cardsBySuit() {
         Map<Suit, SortedSet<Card>> jdkCardsBySuit = this.jdkDeck.getCardsBySuit();
         ImmutableSetMultimap<Suit, Card> ggCardsBySuit = this.ggDeck.getCardsBySuit();
-        // fixme:
-        // Assert.assertEquals(jdkCardsBySuit.get(Suit.CLUBS), ggCardsBySuit.get(Suit.CLUBS));
+        Assertions.assertThat(ggCardsBySuit.get(Suit.CLUBS)).isEqualTo(jdkCardsBySuit.get(Suit.CLUBS));
     }
 
     @Test
     void cardsBySuitIsImmutable() {
         var ggCardsBySuit = this.ggDeck.getCardsBySuit();
-        /*
-        fixme:
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ggCardsBySuit.removeAll(Suit.CLUBS));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                ggCardsBySuit::clear);
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ggCardsBySuit.get(Suit.CLUBS).remove(null));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                () -> ggCardsBySuit.get(Suit.CLUBS).add(null));
-        Verify.assertThrows(
-                UnsupportedOperationException.class,
-                ggCardsBySuit.get(Suit.CLUBS)::clear);*/
+
+        Executable removeAll = () -> ggCardsBySuit.removeAll(Suit.CLUBS);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, removeAll);
+
+        Executable clear = ggCardsBySuit::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clear);
+
+        Executable remove = () -> ggCardsBySuit.get(Suit.CLUBS).remove(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, remove);
+
+        Executable add = () -> ggCardsBySuit.get(Suit.CLUBS).add(null);
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, add);
+
+        Executable clearBySuit = ggCardsBySuit.get(Suit.CLUBS)::clear;
+        org.junit.jupiter.api.Assertions.assertThrows(UnsupportedOperationException.class, clearBySuit);
     }
 
     @Test
     void countsBySuit() {
-        /*
-        fixme:
-        Assert.assertEquals(
-                this.jdkDeck.countsBySuit().get(Suit.CLUBS).intValue(),
-                this.ggDeck.countsBySuit().count(Suit.CLUBS));*/
+        Assertions.assertThat(this.ggDeck.countsBySuit().count(Suit.CLUBS)).isEqualTo(this.jdkDeck.countsBySuit().get(Suit.CLUBS).intValue());
     }
 
     @Test
     void countsByRank() {
-        /*
-        fixme:
-        Assert.assertEquals(
-                this.jdkDeck.countsByRank().get(Rank.TEN).intValue(),
-                this.ggDeck.countsByRank().count(Rank.NINE));*/
+        Assertions.assertThat(this.ggDeck.countsByRank().count(Rank.NINE)).isEqualTo(this.jdkDeck.countsByRank().get(Rank.TEN).intValue());
     }
 }

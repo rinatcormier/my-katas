@@ -1,5 +1,6 @@
 package my.rinat.kata.lambda.jdk;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.DoubleAdder;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.function.DoubleConsumer;
@@ -13,6 +14,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class PrimitiveFunctionalInterfaceTest {
@@ -27,8 +29,7 @@ class PrimitiveFunctionalInterfaceTest {
             }
         };
         IntStream.rangeClosed(1, 5).forEach(consumer);
-        // fixme:
-        // Assert.assertEquals(15, adder.longValue());
+        Assertions.assertThat(adder.longValue()).isEqualTo(15);
     }
 
     @Test
@@ -42,8 +43,7 @@ class PrimitiveFunctionalInterfaceTest {
             }
         };
         LongStream.rangeClosed(1, 5).forEach(consumer);
-        // fixme:
-        // Assert.assertEquals(15, adder.longValue());
+        Assertions.assertThat(adder.longValue()).isEqualTo(15);
     }
 
     @Test
@@ -57,8 +57,7 @@ class PrimitiveFunctionalInterfaceTest {
             }
         };
         DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).forEach(consumer);
-        // fixme:
-        // Assert.assertEquals(15.0, adder.doubleValue(), 0.0);
+        Assertions.assertThat(adder.doubleValue()).isEqualTo(15.0, Assertions.within(0.0));
     }
 
     @Test
@@ -71,14 +70,12 @@ class PrimitiveFunctionalInterfaceTest {
             }
         };
         var evens = IntStream.rangeClosed(1, 5).filter(predicate).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(2, 4), evens);
+        Assertions.assertThat(Arrays.asList(2, 4)).isEqualTo(evens);
         var odds = IntStream.rangeClosed(1, 5).filter(predicate.negate()).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(1, 3, 5), odds);
-//        Assert.assertTrue(IntStream.rangeClosed(1, 5).anyMatch(predicate));
-//        Assert.assertFalse(IntStream.rangeClosed(1, 5).allMatch(predicate));
-//        Assert.assertFalse(IntStream.rangeClosed(1, 5).noneMatch(predicate));
+        Assertions.assertThat(Arrays.asList(1, 3, 5)).isEqualTo(odds);
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).allMatch(predicate)).isFalse();
+        Assertions.assertThat(IntStream.rangeClosed(1, 5).noneMatch(predicate)).isFalse();
     }
 
     @Test
@@ -91,14 +88,12 @@ class PrimitiveFunctionalInterfaceTest {
             }
         };
         var evens = LongStream.rangeClosed(1, 5).filter(predicate).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(2L, 4L), evens);
+        Assertions.assertThat(Arrays.asList(2L, 4L)).isEqualTo(evens);
         var odds = LongStream.rangeClosed(1, 5).filter(predicate.negate()).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(1L, 3L, 5L), odds);
-//        Assert.assertTrue(LongStream.rangeClosed(1, 5).anyMatch(predicate));
-//        Assert.assertFalse(LongStream.rangeClosed(1, 5).allMatch(predicate));
-//        Assert.assertFalse(LongStream.rangeClosed(1, 5).noneMatch(predicate));
+        Assertions.assertThat(Arrays.asList(1L, 3L, 5L)).isEqualTo(odds);
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).allMatch(predicate)).isFalse();
+        Assertions.assertThat(LongStream.rangeClosed(1, 5).noneMatch(predicate)).isFalse();
     }
 
     @Test
@@ -112,14 +107,18 @@ class PrimitiveFunctionalInterfaceTest {
         };
         var greaterThan =
                 DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).filter(predicate).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(4.0d, 5.0d), greaterThan);
+        Assertions.assertThat(Arrays.asList(4.0d, 5.0d)).isEqualTo(greaterThan);
+
         var lessThanEqualTo =
-                DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).filter(predicate.negate()).boxed().collect(Collectors.toList());
-        // fixme:
-        // Assert.assertEquals(Arrays.asList(1.0d, 2.0d, 3.0d), lessThanEqualTo);
-//        Assert.assertTrue(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).anyMatch(predicate));
-//        Assert.assertFalse(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).allMatch(predicate));
-//        Assert.assertFalse(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).noneMatch(predicate));
+                DoubleStream
+                        .of(1.0, 2.0, 3.0, 4.0, 5.0)
+                        .filter(predicate.negate())
+                        .boxed()
+                        .collect(Collectors.toList());
+
+        Assertions.assertThat(Arrays.asList(1.0d, 2.0d, 3.0d)).isEqualTo(lessThanEqualTo);
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).anyMatch(predicate)).isTrue();
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).allMatch(predicate)).isFalse();
+        Assertions.assertThat(DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0).noneMatch(predicate)).isFalse();
     }
 }
