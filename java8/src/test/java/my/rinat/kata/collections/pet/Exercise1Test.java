@@ -14,7 +14,7 @@ class Exercise1Test extends PetDomainForKata {
 
         MutableList<String> expectedFirstNames = Lists.mutable.with("Mary", "Bob", "Ted", "Jake", "Barry", "Terry", "Harry", "John");
 
-        Assertions.assertThat(expectedFirstNames).isEqualTo(firstNames);
+        Assertions.assertThat(expectedFirstNames).containsExactlyElementsOf(firstNames);
     }
 
     @Test
