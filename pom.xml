@@ -41,6 +41,7 @@
         <module>groovy</module>
         <module>scala</module>
         <module>sql-ex</module>
+        <module>algorithms</module>
     </modules>
     <packaging>pom</packaging>
 
