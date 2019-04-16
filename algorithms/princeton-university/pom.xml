@@ -12,6 +12,9 @@
 
     <artifactId>princeton-university</artifactId>
 
+    <modules>
+        <module>utility-library</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
