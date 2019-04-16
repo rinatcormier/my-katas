@@ -12,6 +12,9 @@
 
     <artifactId>algorithms</artifactId>
 
+    <modules>
+        <module>princeton-university</module>
+    </modules>
     <packaging>pom</packaging>
 
 </project>
