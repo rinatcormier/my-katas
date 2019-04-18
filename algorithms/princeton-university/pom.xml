@@ -13,6 +13,7 @@
     <artifactId>princeton-university</artifactId>
 
     <modules>
+        <module>chapter-1-fundamentals</module>
         <module>utility-library</module>
     </modules>
     <packaging>pom</packaging>
