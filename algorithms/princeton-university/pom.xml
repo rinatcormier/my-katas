@@ -50,6 +50,11 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-ext</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
