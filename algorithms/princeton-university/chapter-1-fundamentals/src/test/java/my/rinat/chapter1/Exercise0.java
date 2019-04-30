@@ -1,6 +1,7 @@
 package my.rinat.chapter1;
 
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -12,7 +13,7 @@ class Exercise0 {
     @ParameterizedTest
     @MethodSource("gcdTestCandidates")
     void testGcd(int p, int q, int expectedGcd) {
-        Assertions.assertThat(Math.gcd(p, q)).isEqualTo(expectedGcd);
+        assertThat(Math.gcd(p, q)).isEqualTo(expectedGcd);
     }
 
     private static Stream<Arguments> gcdTestCandidates() {
