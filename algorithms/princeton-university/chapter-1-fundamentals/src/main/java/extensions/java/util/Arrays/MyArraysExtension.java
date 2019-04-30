@@ -26,4 +26,11 @@ public class MyArraysExtension {
     public static double[] copy(double[] array) {
         throw new UnsupportedOperationException();
     }
+
+    // todo: implement reversing of the array
+    @FrameworkArtifact(usedBy = "manifold.systems")
+    @Extension
+    public static void reverse(double[] array) {
+        throw new UnsupportedOperationException();
+    }
 }

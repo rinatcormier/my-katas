@@ -47,6 +47,17 @@ class Exercise0 {
         assertThat(array).containsExactly(copied);
     }
 
+    @ParameterizedTest
+    @MethodSource("oneDimensionalArrays")
+    void testArrayReversing(double[] array) {
+        double[] origin = new double[array.length];
+        System.arraycopy(array, 0, origin, 0, array.length);
+        Arrays.reverse(array);
+        for (int i = 0; i < array.length; i++) {
+            assertThat(origin[i]).isEqualTo(array[array.length - i - 1]);
+        }
+    }
+
     private static Stream<double[]> oneDimensionalArrays() {
         return Stream.of(
                 new double[] {1.0, 2.0, 3.0},
