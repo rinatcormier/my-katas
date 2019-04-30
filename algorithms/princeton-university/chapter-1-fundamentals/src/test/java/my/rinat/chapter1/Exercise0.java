@@ -39,6 +39,14 @@ class Exercise0 {
         assertThat(Arrays.avg(array)).isEqualTo(2.0, within(0.0));
     }
 
+    @ParameterizedTest
+    @MethodSource("oneDimensionalArrays")
+    void testArrayCopying(double[] array) {
+        double[] copied = Arrays.copy(array);
+        assertThat(array == copied).isFalse();
+        assertThat(array).containsExactly(copied);
+    }
+
     private static Stream<double[]> oneDimensionalArrays() {
         return Stream.of(
                 new double[] {1.0, 2.0, 3.0},

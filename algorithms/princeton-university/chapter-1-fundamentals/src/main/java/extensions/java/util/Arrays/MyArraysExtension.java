@@ -19,4 +19,11 @@ public class MyArraysExtension {
     public static double avg(double[] array) {
         throw new UnsupportedOperationException();
     }
+
+    // todo: implement copying of the array
+    @FrameworkArtifact(usedBy = "manifold.systems")
+    @Extension
+    public static double[] copy(double[] array) {
+        throw new UnsupportedOperationException();
+    }
 }
