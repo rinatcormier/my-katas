@@ -1,11 +1,13 @@
 package my.rinat.chapter1;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 class Exercise0 {
@@ -22,6 +24,21 @@ class Exercise0 {
                 Arguments.of(3, 2, 1),
                 Arguments.of(14, 7, 7),
                 Arguments.of(125, 25, 25)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("oneDimensionalArrays")
+    void testMaxSearching(double[] array) {
+        assertThat(Arrays.max(array)).isEqualTo(3.0, within(0.0));
+    }
+
+    private static Stream<double[]> oneDimensionalArrays() {
+        return Stream.of(
+                new double[] {1.0, 2.0, 3.0},
+                new double[] {3.0, 2.0, 1.0},
+                new double[] {2.0, 3.0, 1.0},
+                new double[] {2.0, 1.0, 3.0}
         );
     }
 }
