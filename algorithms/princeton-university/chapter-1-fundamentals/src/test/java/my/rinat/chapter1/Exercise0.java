@@ -33,6 +33,12 @@ class Exercise0 {
         assertThat(Arrays.max(array)).isEqualTo(3.0, within(0.0));
     }
 
+    @ParameterizedTest
+    @MethodSource("oneDimensionalArrays")
+    void testAvgComputing(double[] array) {
+        assertThat(Arrays.avg(array)).isEqualTo(2.0, within(0.0));
+    }
+
     private static Stream<double[]> oneDimensionalArrays() {
         return Stream.of(
                 new double[] {1.0, 2.0, 3.0},
