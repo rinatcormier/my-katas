@@ -3,7 +3,6 @@ package extensions.java.lang.Math;
 import manifold.ext.api.Extension;
 import my.rinat.infrastructure.FrameworkArtifact;
 
-@FrameworkArtifact(usedBy = "manifold.systems")
 @Extension
 public class MyMathExtension {
 
