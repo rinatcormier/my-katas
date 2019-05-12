@@ -64,7 +64,7 @@
         <eclipse-collections.version>9.2.0</eclipse-collections.version>
         <kotlin.version>1.2.41</kotlin.version>
         <jmh.version>1.21</jmh.version>
-        <manifold.version>0.60-alpha</manifold.version>
+        <manifold.version>RELEASE</manifold.version>
 
     </properties>
 
