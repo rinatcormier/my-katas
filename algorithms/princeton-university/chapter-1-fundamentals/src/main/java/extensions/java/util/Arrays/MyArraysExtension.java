@@ -33,4 +33,11 @@ public class MyArraysExtension {
     public static void reverse(double[] array) {
         throw new UnsupportedOperationException();
     }
+
+    // todo: implement square matrices multiplication
+    @FrameworkArtifact(usedBy = "manifold.systems")
+    @Extension
+    public static double[][] multiply(double[][] a, double[][] b) {
+        throw new UnsupportedOperationException();
+    }
 }

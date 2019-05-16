@@ -66,4 +66,55 @@ class Exercise0 {
                 new double[] {2.0, 1.0, 3.0}
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("matricesMultiplicationCandidates")
+    void testMatricesMultiplication(double[][] a, double[][] b, double[][] expected) {
+        assertThat(equals(expected, Arrays.multiply(a, b))).isTrue();
+    }
+
+    private static Stream<Arguments> matricesMultiplicationCandidates() {
+        double[][] a = new double[][] {
+                {1.0, 1.0, 1.0},
+                {2.0, 2.0, 2.0},
+                {3.0, 3.0, 3.0}
+        };
+        double[][] b = new double[][] {
+                {3.0, 3.0, 3.0},
+                {2.0, 2.0, 2.0},
+                {1.0, 1.0, 1.0}
+        };
+        return Stream.of(
+                Arguments.of(a, b, multiply(a, b))
+        );
+    }
+
+    private static double[][] multiply(double[][] a, double[][] b) {
+        int n = a.length;
+        double[][] result = new double[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < n; k++) {
+                    result[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private static boolean equals(double[][] a, double[][] b) {
+        int n = a.length;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (a[i][j] != b[i][j]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 }
