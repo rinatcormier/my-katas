@@ -5,6 +5,7 @@ services:
     image: postgres:11
     volumes:
       - ./sqlex.sql:/docker-entrypoint-initdb.d/sqlex.sql
+      - ./sqlcookbook.sql:/docker-entrypoint-initdb.d/sqlcookbook.sql
     ports:
       - "5432:5432"
     environment:
