@@ -104,4 +104,15 @@ class Exercise1 {
         }
         StdOut.println(sum);
     }
+
+    @Test
+    void exercise_1_1_7_c() {
+        int sum = 0;
+        for (int i = 1; i < 1000; i *= 2) {
+            for (int j = 0; j < i; j++) {
+                sum++;
+            }
+        }
+        StdOut.println(sum);
+    }
 }
