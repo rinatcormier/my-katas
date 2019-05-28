@@ -3,6 +3,7 @@ package my.rinat.chapter1;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
+import edu.princeton.util.StdOut;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -71,5 +72,16 @@ class Exercise1 {
                 Arguments.of(0.0, 0.9, false),
                 Arguments.of(0.1, 1.0, false)
         );
+    }
+
+    @Test
+    void exercise_1_1_6() {
+        int f = 0;
+        int g = 1;
+        for (int i = 0; i <= 15; i++) {
+            StdOut.println(f);
+            f = f + g;
+            g = f - g;
+        }
     }
 }
