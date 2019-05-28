@@ -17,4 +17,15 @@ class Exercise1 {
         assertThat(true && false || true && true).isTrue();
         // @formatter:on
     }
+
+    @Test
+    void exercise_1_1_2() {
+        // @formatter:off
+        assertThat((1 + 2.236) / 2).isEqualTo(1.618);
+        assertThat(1 + 2 + 3 + 4.0).isEqualTo(10.0, offset(0.0));
+        //noinspection ConstantConditions
+        assertThat(4.1 >= 4)       .isTrue();
+        assertThat(1 + 2 + "3")    .isEqualTo("33");
+        // @formatter:on
+    }
 }
