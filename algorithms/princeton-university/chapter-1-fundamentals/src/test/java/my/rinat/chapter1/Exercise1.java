@@ -54,4 +54,22 @@ class Exercise1 {
                 Arguments.of(2, 2, 2, "equal")
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("candidates_for_exercise_1_1_5")
+    void exercise_1_1_5(double a, double b, boolean result) {
+        assertThat(areStrictlyBetweenZeroAndOne(a, b)).isEqualTo(result);
+    }
+
+    private static boolean areStrictlyBetweenZeroAndOne(double x, double y) {
+        return (x > 0.0 && x < 1.0) && (y > 0.0 && y < 1.0);
+    }
+
+    private static Stream<Arguments> candidates_for_exercise_1_1_5() {
+        return Stream.of(
+                Arguments.of(0.1, 0.9, true),
+                Arguments.of(0.0, 0.9, false),
+                Arguments.of(0.1, 1.0, false)
+        );
+    }
 }
