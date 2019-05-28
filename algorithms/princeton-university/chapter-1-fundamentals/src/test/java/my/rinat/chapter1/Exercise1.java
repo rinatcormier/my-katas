@@ -93,4 +93,15 @@ class Exercise1 {
         }
         StdOut.printf("%.5f\n", t);
     }
+
+    @Test
+    void exercise_1_1_7_b() {
+        int sum = 0;
+        for (int i = 1; i < 1000; i++) {
+            for (int j = 0; j < i; j++) {
+                sum++;
+            }
+        }
+        StdOut.println(sum);
+    }
 }
