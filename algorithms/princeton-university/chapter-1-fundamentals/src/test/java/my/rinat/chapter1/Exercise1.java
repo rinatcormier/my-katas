@@ -122,4 +122,22 @@ class Exercise1 {
         StdOut.println('b' + 'c');
         StdOut.println((char) ('a' + 4));
     }
+
+    @ParameterizedTest
+    @MethodSource("candidates_for_exercise_1_1_9")
+    void exercise_1_1_9(int N, String result) {
+        StringBuilder binaryRepresentation = new StringBuilder();
+        for (int n = N; n > 0; n /= 2) {
+            binaryRepresentation.insert(0, (n % 2));
+        }
+        assertThat(binaryRepresentation.toString()).isEqualTo(result);
+    }
+
+    private static Stream<Arguments> candidates_for_exercise_1_1_9() {
+        return Stream.of(
+                Arguments.of(1, Integer.toBinaryString(1)),
+                Arguments.of(2, Integer.toBinaryString(2)),
+                Arguments.of(100, Integer.toBinaryString(100))
+        );
+    }
 }
