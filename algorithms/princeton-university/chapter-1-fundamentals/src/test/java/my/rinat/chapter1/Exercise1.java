@@ -140,4 +140,21 @@ class Exercise1 {
                 Arguments.of(100, Integer.toBinaryString(100))
         );
     }
+
+    @Test
+    void exercise_1_1_11() {
+        boolean[][] booleans = {
+                {true, false, true},
+                {false, true, false},
+                {true, false, true}
+        };
+        StdOut.println("   1 2 3");
+        for (int i = 0; i < booleans.length; i++) {
+            StdOut.print((i + 1) + " ");
+            for (int j = 0; j < booleans[i].length; j++) {
+                StdOut.print(booleans[i][j] ? " *" : "  ");
+            }
+            StdOut.println();
+        }
+    }
 }
