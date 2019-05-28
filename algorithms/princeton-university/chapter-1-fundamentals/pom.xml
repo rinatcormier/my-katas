@@ -11,4 +11,12 @@
 
     <artifactId>chapter-1-fundamentals</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>my.rinat</groupId>
+            <artifactId>utility-library</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
