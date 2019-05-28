@@ -171,4 +171,31 @@ class Exercise1 {
             System.out.println(a[i]);
         }
     }
+
+    @Test
+    void exercise_1_1_13() {
+        int[][] arrays = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        for (int[] array : arrays) {
+            for (int item : array) {
+                StdOut.print(" ");
+                StdOut.print(item);
+            }
+            StdOut.println();
+        }
+
+        StdOut.println();
+
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = 0; j < arrays[i].length; j++) {
+                StdOut.print(" ");
+                StdOut.print(arrays[j][i]);
+            }
+            StdOut.println();
+        }
+    }
 }
