@@ -115,4 +115,11 @@ class Exercise1 {
         }
         StdOut.println(sum);
     }
+
+    @Test
+    void exercise_1_1_8() {
+        StdOut.println('b');
+        StdOut.println('b' + 'c');
+        StdOut.println((char) ('a' + 4));
+    }
 }
