@@ -198,4 +198,38 @@ class Exercise1 {
             StdOut.println();
         }
     }
+
+    @ParameterizedTest
+    @MethodSource("candidates_for_exercise_1_1_14")
+    void exercise_1_1_14(int x, int result) {
+        assertThat(lg(x)).isEqualTo(result);
+    }
+
+    private static int lg(int x) {
+        if (x == 1) {
+            return x;
+        }
+        for (int i = 1; i <= x / 2; i++) {
+            if ((i * i) <= x && ((i + 1) * (i + 1)) > x) {
+                return i;
+            }
+        }
+        throw new IllegalArgumentException("base-2 logarithm of x has not found");
+    }
+
+    private static Stream<Arguments> candidates_for_exercise_1_1_14() {
+        return Stream.of(
+                Arguments.of(1, 1),
+                Arguments.of(2, 1),
+                Arguments.of(3, 1),
+                Arguments.of(4, 2),
+                Arguments.of(5, 2),
+                Arguments.of(6, 2),
+                Arguments.of(7, 2),
+                Arguments.of(8, 2),
+                Arguments.of(9, 3),
+                Arguments.of(10, 3),
+                Arguments.of(11, 3)
+        );
+    }
 }
