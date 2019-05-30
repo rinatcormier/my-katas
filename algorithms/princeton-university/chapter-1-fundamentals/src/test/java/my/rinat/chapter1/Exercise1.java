@@ -315,4 +315,21 @@ class Exercise1 {
             return f[N];
         }
     }
+
+    @Test
+    void exercise_1_1_20() {
+        for (int i = 0; i < 20; i++) {
+            StdOut.println("fact(" + i + ") = " + fact(i) + ", ln(fact(" + i + ")) = " + Math.log(fact(i)));
+        }
+    }
+
+    private static long fact(int N) {
+        if (N == 0L) {
+            return 0L;
+        }
+        if (N == 1L) {
+            return 1L;
+        }
+        return N * fact(N - 1);
+    }
 }
