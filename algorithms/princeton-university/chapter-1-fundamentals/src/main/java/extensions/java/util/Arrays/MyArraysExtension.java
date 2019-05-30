@@ -41,11 +41,16 @@ public class MyArraysExtension {
         return copy;
     }
 
-    // todo: implement reversing of the array
     @FrameworkArtifact(usedBy = "manifold.systems")
     @Extension
     public static void reverse(double[] array) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(array);
+        int size = array.length;
+        for (int i = 0; i < size / 2; i++) {
+            array[i] += array[size - i - 1];
+            array[size - i - 1] = array[i] - array[size - i - 1];
+            array[i] -= array[size - i - 1];
+        }
     }
 
     // todo: implement square matrices multiplication
