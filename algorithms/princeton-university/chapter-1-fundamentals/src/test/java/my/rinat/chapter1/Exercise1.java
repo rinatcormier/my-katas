@@ -289,4 +289,30 @@ class Exercise1 {
         }
         return mystery(a + a, b / 2) + a;
     }
+
+    @Test
+    void exercise_1_1_19() {
+        for (int N = 0; N < 100; N++) {
+            f = null;
+            StdOut.println(N + " " + F(N));
+        }
+    }
+
+    private static int[] f;
+
+    private static int F(int N) {
+        if (N <= 0) {
+            return 0;
+        }
+        if (f == null) {
+            f = new int[N + 1];
+            f[1] = 1;
+        }
+        if (f[N] != 0) {
+            return f[N];
+        } else {
+            f[N] = F(N - 1) + F(N - 2);
+            return f[N];
+        }
+    }
 }
