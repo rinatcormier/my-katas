@@ -232,4 +232,33 @@ class Exercise1 {
                 Arguments.of(11, 3)
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("candidates_for_exercise_1_1_15")
+    void exercise_1_1_15(int[] a, int M, int[] expected) {
+        assertThat(histogram(a, M)).containsExactly(expected);
+    }
+
+    private static int[] histogram(int[] a, int M) {
+        int[] result = new int[M];
+
+        for (int i = 0; i < result.length; i++) {
+            int counter = 0;
+            for (int value : a) {
+                if (value == i) {
+                    counter++;
+                }
+            }
+            result[i] = counter;
+        }
+
+        return result;
+    }
+
+    private static Stream<Arguments> candidates_for_exercise_1_1_15() {
+        return Stream.of(
+                Arguments.of(new int[] {0, 1, 2, 3, 4, 5}, 10, new int[] {1, 1, 1, 1, 1, 1, 0, 0, 0, 0}),
+                Arguments.of(new int[] {1, 2, 2, 3, 3, 3}, 5, new int[] {0, 1, 2, 3, 0})
+        );
+    }
 }
