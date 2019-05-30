@@ -21,11 +21,15 @@ public class MyArraysExtension {
         return max;
     }
 
-    // todo: implement the average of the array values computing
     @FrameworkArtifact(usedBy = "manifold.systems")
     @Extension
     public static double avg(double[] array) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(array);
+        double sum = array[0];
+        for (int i = 1; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum / array.length;
     }
 
     // todo: implement copying of the array
