@@ -32,11 +32,13 @@ public class MyArraysExtension {
         return sum / array.length;
     }
 
-    // todo: implement copying of the array
     @FrameworkArtifact(usedBy = "manifold.systems")
     @Extension
     public static double[] copy(double[] array) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(array);
+        double[] copy = new double[array.length];
+        System.arraycopy(array, 0, copy, 0, array.length);
+        return copy;
     }
 
     // todo: implement reversing of the array
