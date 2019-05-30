@@ -332,4 +332,21 @@ class Exercise1 {
         }
         return N * fact(N - 1);
     }
+
+    @ParameterizedTest
+    @MethodSource("candidates_for_exercise_1_1_21")
+    void exercise_1_1_21(String name, int a, int b) {
+        printAverages(name, a, b);
+    }
+
+    private static void printAverages(String name, int a, int b) {
+        StdOut.printf("%20s: (%d + %d) / 2 = %.3f\n", name, a, b, (((double) (a + b)) / 2));
+    }
+
+    private static Stream<Arguments> candidates_for_exercise_1_1_21() {
+        return Stream.of(
+                Arguments.of("some avg value 1", 1, 2),
+                Arguments.of("some avg value 2", 5, 6)
+        );
+    }
 }
