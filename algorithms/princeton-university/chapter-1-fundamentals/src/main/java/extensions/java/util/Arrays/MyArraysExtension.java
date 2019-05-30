@@ -3,14 +3,22 @@ package extensions.java.util.Arrays;
 import manifold.ext.api.Extension;
 import my.rinat.infrastructure.FrameworkArtifact;
 
+import java.util.Objects;
+
 @Extension
 public class MyArraysExtension {
 
-    // todo: implement linear maximum searching
     @FrameworkArtifact(usedBy = "manifold.systems")
     @Extension
     public static double max(double[] array) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(array);
+        double max = array[0];
+        for (double entry : array) {
+            if (entry > max) {
+                max = entry;
+            }
+        }
+        return max;
     }
 
     // todo: implement the average of the array values computing
