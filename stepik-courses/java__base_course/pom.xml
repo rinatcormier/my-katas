@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>katas</artifactId>
+        <artifactId>stepik-courses</artifactId>
         <groupId>my.rinat</groupId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>stepik-courses</artifactId>
-
-    <modules>
-        <module>algo__theory_and_practice__methods</module>
-        <module>java__base_course</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>java__base_course</artifactId>
 
 </project>
