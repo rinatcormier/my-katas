@@ -42,6 +42,7 @@
         <module>scala</module>
         <module>sql-ex</module>
         <module>algorithms</module>
+        <module>stepik-courses</module>
     </modules>
     <packaging>pom</packaging>
 

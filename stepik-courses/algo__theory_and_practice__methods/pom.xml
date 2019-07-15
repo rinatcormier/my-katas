@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>stepik</artifactId>
+        <artifactId>stepik-courses</artifactId>
         <groupId>my.rinat</groupId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>theory-and-practice_methods</artifactId>
+    <artifactId>algo__theory_and_practice__methods</artifactId>
 
     <properties>
         <java.version>1.8</java.version>

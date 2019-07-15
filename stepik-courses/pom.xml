@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>algorithms</artifactId>
+        <artifactId>katas</artifactId>
         <groupId>my.rinat</groupId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>stepik</artifactId>
+    <artifactId>stepik-courses</artifactId>
 
     <modules>
-        <module>theory-and-practice_methods</module>
+        <module>algo__theory_and_practice__methods</module>
     </modules>
     <packaging>pom</packaging>
 
