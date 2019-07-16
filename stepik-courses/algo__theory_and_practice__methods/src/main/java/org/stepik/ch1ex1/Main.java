@@ -1,4 +1,4 @@
-package org.stepik.part1;
+package org.stepik.ch1ex1;
 
 import java.util.Scanner;
 

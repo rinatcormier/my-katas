@@ -1,4 +1,4 @@
-package org.stepik.part2;
+package org.stepik.ch2ex1;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
