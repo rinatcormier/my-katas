@@ -12,6 +12,7 @@ class MainTest extends BaseTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         mockOut(out);
         Main.main(new String[] {});
-        Assertions.assertEquals("It's alive! It's alive!\r\n", out.toString());
+        final String lineSeparator = System.getProperty("line.separator");
+        Assertions.assertEquals("It's alive! It's alive!" + lineSeparator, out.toString());
     }
 }
