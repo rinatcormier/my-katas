@@ -1,18 +1,18 @@
-package ch__5_2__2;
+package org.stepik.course187.ch5_2ex2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import common.BaseTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.stepik.test.AbstractIOMocker;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.stream.Stream;
 
-class MainTest extends BaseTest {
+class MainTest extends AbstractIOMocker {
 
     @ParameterizedTest
     @MethodSource("candidates")

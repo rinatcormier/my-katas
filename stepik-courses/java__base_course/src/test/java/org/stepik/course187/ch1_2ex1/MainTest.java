@@ -1,12 +1,12 @@
-package ch__1_2__1;
+package org.stepik.course187.ch1_2ex1;
 
-import common.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.stepik.test.AbstractIOMocker;
 
 import java.io.ByteArrayOutputStream;
 
-class MainTest extends BaseTest {
+class MainTest extends AbstractIOMocker {
     @Test
     void testMain() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();

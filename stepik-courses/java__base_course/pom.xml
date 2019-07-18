@@ -38,6 +38,13 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>my.rinat</groupId>
+            <artifactId>stepik-test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

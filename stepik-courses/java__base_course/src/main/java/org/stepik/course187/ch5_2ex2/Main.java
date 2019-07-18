@@ -1,4 +1,4 @@
-package ch__5_2__2;
+package org.stepik.course187.ch5_2ex2;
 
 import java.io.IOException;
 

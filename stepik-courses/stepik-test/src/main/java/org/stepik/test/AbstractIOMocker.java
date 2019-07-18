@@ -1,4 +1,4 @@
-package common;
+package org.stepik.test;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-public abstract class BaseTest {
+public abstract class AbstractIOMocker {
 
     private static final InputStream originalIn = System.in;
     private static final PrintStream originalOut = System.out;
