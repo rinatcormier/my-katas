@@ -6,6 +6,7 @@ services:
     volumes:
       - ./sqlex.sql:/docker-entrypoint-initdb.d/sqlex.sql
       - ./sqlcookbook.sql:/docker-entrypoint-initdb.d/sqlcookbook.sql
+      - ./sqlexercises.sql:/docker-entrypoint-initdb.d/sqlexercises.sql
     ports:
       - "5432:5432"
     environment:
