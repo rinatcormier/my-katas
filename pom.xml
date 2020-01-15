@@ -43,6 +43,7 @@
         <module>sql-ex</module>
         <module>algorithms</module>
         <module>stepik-courses</module>
+        <module>codewars</module>
     </modules>
     <packaging>pom</packaging>
 
