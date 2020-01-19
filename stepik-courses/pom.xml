@@ -13,6 +13,7 @@
     <artifactId>stepik-courses</artifactId>
 
     <modules>
+        <module>algo__theory_and_practice__data_structures</module>
         <module>algo__theory_and_practice__methods</module>
         <module>java__base_course</module>
         <module>stepik-test</module>
