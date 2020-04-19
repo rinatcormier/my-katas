@@ -12,10 +12,6 @@
 
     <artifactId>algo__theory_and_practice__data_structures</artifactId>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
 
         <dependency>
