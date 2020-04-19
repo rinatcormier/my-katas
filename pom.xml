@@ -44,6 +44,7 @@
         <module>algorithms</module>
         <module>stepik-courses</module>
         <module>codewars</module>
+        <module>olymp</module>
     </modules>
     <packaging>pom</packaging>
 
