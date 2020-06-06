@@ -1,3 +1,5 @@
+@file:Suppress("RedundantVisibilityModifier", "RemoveRedundantQualifierName")
+
 package my.rinat.kata.donutkatakotlin
 
 import org.eclipse.collections.impl.utility.ArrayIterate

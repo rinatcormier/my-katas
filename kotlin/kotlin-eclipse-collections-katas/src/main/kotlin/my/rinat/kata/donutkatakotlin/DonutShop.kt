@@ -90,7 +90,7 @@ class DonutShop {
         return this.donuts.asUnmodifiable()
     }
 
-    fun getTopDonuts(n: Int): MutableList<ObjectIntPair<DonutType>>? {
+    fun getTopDonuts(@Suppress("UNUSED_PARAMETER") n: Int): MutableList<ObjectIntPair<DonutType>>? {
         // TODO - Write the code necessary to calculate the top n donuts
         // Hint: Look at the domain and use deliveries which have collections of ordered donuts
         // Hint: You will need to flatten the donuts and collect their donut types
@@ -98,7 +98,7 @@ class DonutShop {
         return null
     }
 
-    fun getTotalDeliveryValueFor(date: LocalDate): Double {
+    fun getTotalDeliveryValueFor(@Suppress("UNUSED_PARAMETER") date: LocalDate): Double {
         // TODO - Write the code necessary to sum up the total delivery value for the specified date
         // Hint: Look at sumOfDouble()
         return 0.0
@@ -115,7 +115,7 @@ class DonutShop {
     // Hint: There is a method groupByEach which takes a function which returns Iterable
 
 
-    fun getDonutPriceStatistics(fromDate: LocalDate, toDate: LocalDate): DoubleSummaryStatistics? {
+    fun getDonutPriceStatistics(@Suppress("UNUSED_PARAMETER") fromDate: LocalDate, @Suppress("UNUSED_PARAMETER") toDate: LocalDate): DoubleSummaryStatistics? {
         // TODO - Calculate the DoubleSummaryStatistics for the deliveries inclusive of the specified date range.
         // Hint: Look at select(), flatCollect() and summarizeDouble()
         return null
