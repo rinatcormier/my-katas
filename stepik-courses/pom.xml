@@ -17,6 +17,7 @@
         <module>algo__theory_and_practice__methods</module>
         <module>java__base_course</module>
         <module>stepik-test</module>
+        <module>stepik-kotlin-course</module>
     </modules>
     <packaging>pom</packaging>
 
