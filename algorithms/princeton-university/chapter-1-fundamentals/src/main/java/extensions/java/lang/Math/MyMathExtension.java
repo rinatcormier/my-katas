@@ -1,6 +1,6 @@
 package extensions.java.lang.Math;
 
-import manifold.ext.api.Extension;
+import manifold.ext.rt.api.Extension;
 import my.rinat.infrastructure.FrameworkArtifact;
 
 @Extension

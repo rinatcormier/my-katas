@@ -60,7 +60,7 @@
 
         <eclipse-collections.version>10.2.0</eclipse-collections.version>
         <jmh.version>1.21</jmh.version>
-        <manifold.version>RELEASE</manifold.version>
+        <manifold.version>2020.1.29</manifold.version>
 
     </properties>
 

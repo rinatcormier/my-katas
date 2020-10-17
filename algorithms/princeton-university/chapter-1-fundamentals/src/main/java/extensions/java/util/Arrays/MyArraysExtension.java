@@ -1,6 +1,6 @@
 package extensions.java.util.Arrays;
 
-import manifold.ext.api.Extension;
+import manifold.ext.rt.api.Extension;
 import my.rinat.infrastructure.FrameworkArtifact;
 
 import java.util.Objects;
