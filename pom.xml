@@ -43,6 +43,7 @@
         <module>stepik-courses</module>
         <module>codewars</module>
         <module>olymp</module>
+        <module>front-end</module>
     </modules>
     <packaging>pom</packaging>
 
