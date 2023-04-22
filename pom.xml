@@ -37,6 +37,7 @@
     <modules>
         <module>java8</module>
         <module>java11</module>
+        <module>java17</module>
         <module>kotlin</module>
         <module>sql-ex</module>
         <module>algorithms</module>
@@ -49,7 +50,7 @@
 
     <properties>
 
-        <java.version>11</java.version>
+        <java.version>17</java.version>
 
         <kotlin.version>1.6.0</kotlin.version>
 

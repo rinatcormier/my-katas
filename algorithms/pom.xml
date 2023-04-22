@@ -13,7 +13,7 @@
     <artifactId>algorithms</artifactId>
 
     <modules>
-        <module>princeton-university</module>
+        <!-- fixme: utility-library doesn't compile with java 17 <module>princeton-university</module>-->
         <module>grokking-algorithms</module>
     </modules>
     <packaging>pom</packaging>
