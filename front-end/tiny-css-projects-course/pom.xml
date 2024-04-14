@@ -5,17 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>katas</artifactId>
         <groupId>my.rinat</groupId>
+        <artifactId>front-end</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>front-end</artifactId>
+    <artifactId>tiny-css-projects-course</artifactId>
 
-    <modules>
-        <module>layout-designer-basics</module>
-        <module>tiny-css-projects-course</module>
-    </modules>
-    <packaging>pom</packaging>
+    <description>
+        Based on https://github.com/michaelgearon/Tiny-CSS-Projects
+    </description>
 
 </project>
