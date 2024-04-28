@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.achieves {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    background: #03251a;
+    padding: 20px;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+}
+
+.achieve {
+    padding: 10px 30px;
+}
+
+.achieve p {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.achieve p:nth-child(1) {
+    font-weight: bold;
+    font-size: 50px;
+    color: crimson;
+}
+
+.achieve p:nth-child(2) {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #ffffff;
+    padding-top: 15px;
+}
