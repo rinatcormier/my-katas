@@ -28,3 +28,7 @@ header + p {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+header ~ img {
+    border: 4px solid crimson;
+}
