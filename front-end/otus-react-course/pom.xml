@@ -5,19 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>katas</artifactId>
         <groupId>my.rinat</groupId>
+        <artifactId>front-end</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>front-end</artifactId>
+    <artifactId>otus-react-course</artifactId>
 
-    <modules>
-        <module>layout-designer-basics</module>
-        <module>tiny-css-projects-course</module>
-        <module>stepik-front-end-course</module>
-        <module>otus-react-course</module>
-    </modules>
-    <packaging>pom</packaging>
+    <description>
+        ReactJS course from OTUS
+    </description>
 
 </project>
