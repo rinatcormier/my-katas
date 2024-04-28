@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.menu__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li a {
+    text-transform: capitalize;
+    color: #999;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.nav li a:hover {
+    background-color: #ffc744;
+    color: #fff;
+    border-radius: 5px;
+}
