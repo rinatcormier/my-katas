@@ -23,3 +23,8 @@ article p {
 .list > li ul {
     color: initial;
 }
+
+header + p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
