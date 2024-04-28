@@ -1,0 +1,25 @@
+.parent {
+    display: flex;
+    font-size: 2rem;
+    width: 600px;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid red;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.item-1 {
+    background-color: plum;
+    height: 100%;
+}
+
+.item-2 {
+    background-color: cyan;
+    height: 25%;
+}
+
+.item-3 {
+    background-color: pink;
+    flex-grow: 1;
+}
