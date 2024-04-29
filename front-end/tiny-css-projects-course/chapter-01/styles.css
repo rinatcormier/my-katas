@@ -53,3 +53,7 @@ a:hover {
 a:focus {
     outline: solid 1px crimson;
 }
+
+[lang="it"]::before {
+    content: "🇮🇹";
+}
