@@ -32,3 +32,19 @@ header + p {
 header ~ img {
     border: 4px solid crimson;
 }
+
+a:link {
+    color: #1D70B8;
+}
+
+a:visited {
+    color: #4C2C92;
+}
+
+a:hover {
+    color: #003078;
+}
+
+a:focus {
+    outline: solid 1px crimson;
+}
