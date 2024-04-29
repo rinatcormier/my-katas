@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.info {
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(143, 104, 12);
+    background: linear-gradient(90deg, rgb(82, 47, 6) 0%, rgb(143, 104, 12) 100%);
+}
+
+.item {
+    margin: 50px auto;
+}
+
+.item > * {
+    display: block;
+    line-height: 1.5em;
+    text-align: center;
+    font-size: 30px;
+}
+
+.item > i {
+    color: #d2ab84;
+}
+
+.item > .quantity {
+    color: white;
+}
+
+.item > .desc {
+    text-transform: uppercase;
+    color: #d2ab84;
+    font-size: 15px;
+}
+
+.item > .line {
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    margin: 20px auto;
+}
