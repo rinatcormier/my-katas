@@ -31,7 +31,7 @@ header + p {
 
 header + p::first-letter {
     color: crimson;
-    fs:i
+    font-style: italic;
 }
 
 header ~ img {
