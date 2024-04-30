@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="content">
+    <header class="header">
+        <div class="logo">
+            <img src="assets/header-logo.svg" alt="Site logo">
+        </div>
+        <div class="add-button">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Data</span>
+        </div>
+    </header>
+    <article class="data">
+        <table class="data-table">
+            <thead>
+            <tr>
+                <th class="data-header">Transaction</th>
+                <th class="data-header">Date & Time</th>
+                <th class="data-header">Amount</th>
+                <th class="data-header">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="data-item data-text">Payment for Bonnie Green</td>
+                <td class="data-item data-date">
+                    <time datetime="2021-04-23T09:20:15+03:00">Apr 23, 2021</time>
+                </td>
+                <td class="data-item data-amount-usd">2300</td>
+                <td class="data-item data-text">
+                    <span class="status status-completed">Completed</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="data-item data-text">Refund from Bonnie Green</td>
+                <td class="data-item data-date">
+                    <time datetime="2021-04-23T09:20:15+03:00">Apr 23, 2021</time>
+                </td>
+                <td class="data-item data-amount-usd">1300</td>
+                <td class="data-item data-text">
+                    <span class="status status-cancelled">Cancelled</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="data-item data-text">Payment for Bonnie Green</td>
+                <td class="data-item data-date">
+                    <time datetime="2021-04-23T09:20:15+03:00">Apr 23, 2021</time>
+                </td>
+                <td class="data-item data-amount-usd">300</td>
+                <td class="data-item data-text">
+                    <span class="status status-in-progress">In progress</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+    <footer class="footer">
+        <span>© 2007–2024 ООО «Логнекс»</span>
+    </footer>
+</main>
+</body>
+</html>
