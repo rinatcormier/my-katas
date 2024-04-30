@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1170px;
+    background-color: #24d3d3;
+}
+
+.container, .item {
+    display: flex;
+}
+
+.container {
+    margin: 50px auto;
+    justify-content: space-evenly;
+}
+
+.item {
+    margin: 30px 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon > i, .desc > span {
+    display: block;
+    margin: 5px;
+    color: white;
+}
+
+.icon > i {
+    font-size: 30px;
+}
+
+.desc {
+    font-weight: bold;
+}
+
+.desc > span:nth-child(1) {
+    font-size: 18px;
+}
+
+.desc > span:nth-child(2) {
+    font-size: 12px;
+    text-transform: uppercase;
+}
