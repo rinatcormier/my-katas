@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1000px;
+    background-color: #dad7d7;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.file-icon {
+    width: 20%;
+    font-size: 110px;
+    color: #3434b9;
+}
+
+.file-icon > i {
+    margin: 20px;
+}
+
+.social {
+    font-size: 30px;
+}
+
+.social > i {
+    display: block;
+    margin: 30px;
+    border-radius: 50%;
+}
+
+.social > i:hover {
+    background-color: #18b0b0;
+    color: #fff;
+}
+
+.content {
+    width: 60%;
+}
+
+.content > h1 {
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.content > p {
+    font-size: 14px;
+    line-height: 1.7em;
+}
