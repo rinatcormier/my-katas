@@ -45,6 +45,7 @@
         <module>codewars</module>
         <module>olymp</module>
         <module>front-end</module>
+        <module>interview-problems</module>
     </modules>
     <packaging>pom</packaging>
 
