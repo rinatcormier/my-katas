@@ -4,5 +4,7 @@
 
 ## Purpose
 
+As stated, the main purpose...
+
 ## How To Contribute
 
