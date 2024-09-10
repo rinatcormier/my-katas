@@ -24,3 +24,8 @@
 1. `npm install webpack-merge --save-dev`
 2. Add *webpack.production.js* file
 3. Update npm script
+
+## 6. Add development mode
+1. `npm i webpack-dev-server --save-dev`
+2. Add *webpack.development.js* file
+3. Update npm script
