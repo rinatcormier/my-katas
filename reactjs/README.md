@@ -35,3 +35,6 @@
 2. Update *webpack.config.js*
 3. Add *tsconfig.json* file
 
+## 8. Install CSS modules
+1. `npm i style-loader css-loader postcss postcss-loader postcss-preset-env mini-css-extract-plugin --save-dev`
+2. Add configs
