@@ -41,3 +41,9 @@
 
 ## 9. Assets
 1. Update configs
+
+## 10. Install React
+1. `npm i react react-dom`
+2. `npm i @types/react @types/react-dom --save-dev`
+3. Create examples
+

@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 module.exports = {
     // Входящая точка в приложение
     // https://webpack.js.org/configuration/entry-context/#entry
-    entry: './main.ts',
+    entry: './main.tsx',
     // Определяет контекст сборки, основную директорию, абсолютный путь для входящей точки (entry)
     // https://webpack.js.org/configuration/entry-context/#context
     context: resolve(__dirname, 'src'),
@@ -20,6 +20,11 @@ module.exports = {
         // https://webpack.js.org/configuration/output/#outputfilename
         filename: "[name].[contenthash].js"
     },
+    resolve: {
+        // Подключаем jsx, ts, tsx расширения, чтобы можно было делать import модеулей
+        // https://webpack.js.org/configuration/resolve/#resolveextensions
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },
     // Настройка модулей
     // https://webpack.js.org/configuration/module/
     module: {
@@ -27,7 +32,7 @@ module.exports = {
         rules: [
             {
                 // регулярное выражение для поиска js, jsx, ts, tsx
-                test: /\.j[st]x/i,
+                test: /\.(js|ts)x?$/,
                 // используем лоадер babel-loader
                 use: ['babel-loader'],
                 // исключаем попадание node_modules в лоадер
