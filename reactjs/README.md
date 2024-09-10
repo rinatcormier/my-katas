@@ -19,3 +19,8 @@
 1. `npm install html-webpack-plugin --save-dev`
 2. Add *index.html* to **src** dir
 3. Update *webpack.config.js*
+
+## 5. Add production mode
+1. `npm install webpack-merge --save-dev`
+2. Add *webpack.production.js* file
+3. Update npm script
