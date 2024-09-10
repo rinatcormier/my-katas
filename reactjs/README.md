@@ -38,3 +38,6 @@
 ## 8. Install CSS modules
 1. `npm i style-loader css-loader postcss postcss-loader postcss-preset-env mini-css-extract-plugin --save-dev`
 2. Add configs
+
+## 9. Assets
+1. Update configs

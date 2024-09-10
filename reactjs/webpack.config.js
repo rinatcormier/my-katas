@@ -33,6 +33,18 @@ module.exports = {
                 // исключаем попадание node_modules в лоадер
                 // https://webpack.js.org/loaders/babel-loader/#babel-loader-is-slow
                 exclude: /node_modules/
+            },
+
+            // Встроенный модуль Asset Modules позволяет работать с статическими файлами без
+            // дополнтиельных модулей
+            // https://webpack.js.org/guides/asset-modules/
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(svg)$/i,
+                type: 'asset/inline',
             }
         ]
     },

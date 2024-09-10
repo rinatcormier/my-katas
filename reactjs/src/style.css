@@ -1,3 +1,6 @@
 .layout {
     background-color: red;
+    height: 85px;
+    width: 90px;
+    background-image: url('./assets/react_logo.svg');
 }
