@@ -29,3 +29,9 @@
 1. `npm i webpack-dev-server --save-dev`
 2. Add *webpack.development.js* file
 3. Update npm script
+
+## 7. Install typescript
+1. `npm i fork-ts-checker-webpack-plugin --save-dev`
+2. Update *webpack.config.js*
+3. Add *tsconfig.json* file
+

@@ -1,5 +1,7 @@
 const {resolve} = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
 module.exports = {
     // Входящая точка в приложение
     // https://webpack.js.org/configuration/entry-context/#entry
@@ -39,6 +41,14 @@ module.exports = {
     plugins: [
         // Создаёт файл index.html в output директории на основе созданного шаблона.
         // https://github.com/jantimon/html-webpack-plugin
-        new HtmlWebpackPlugin({template: 'index.html'})
+        new HtmlWebpackPlugin({template: 'index.html'}),
+
+        // Плагин Webpack, который запускает проверку типов TypeScript в отдельном процессе.
+        // https://github.com/TypeStrong/fork-ts-checker-webpack-plugin
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                configFile: resolve(__dirname, 'tsconfig.json')
+            }
+        })
     ]
 }
