@@ -14,3 +14,8 @@
 2. Create *.babelrc* file in the root of the project
 3. Change extension of entry point (*main.js* -> *main.ts*)
 4. Update *webpack.config.js*
+
+## 4. Install HtmlWebpackPlugin
+1. `npm install html-webpack-plugin --save-dev`
+2. Add *index.html* to **src** dir
+3. Update *webpack.config.js*

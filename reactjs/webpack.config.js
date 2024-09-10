@@ -1,4 +1,5 @@
 const {resolve} = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     // Входящая точка в приложение
     // https://webpack.js.org/configuration/entry-context/#entry
@@ -32,5 +33,12 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
-    }
+    },
+    // Опция служит для изменения сборки используя систему плагинов.
+    // https://webpack.js.org/configuration/plugins/
+    plugins: [
+        // Создаёт файл index.html в output директории на основе созданного шаблона.
+        // https://github.com/jantimon/html-webpack-plugin
+        new HtmlWebpackPlugin({template: 'index.html'})
+    ]
 }
