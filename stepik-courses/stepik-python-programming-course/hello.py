@@ -1,11 +1,13 @@
-n = int(input())
-a = n // 100000
-b = n // 10000 % 10
-c = n // 1000 % 10
-d = n // 100 % 10
-e = n // 10 % 10
-f = n % 10
-if (a + b + c) == (d + e + f):
-    print('Счастливый')
-else:
-    print('Обычный')
+s = input()
+current = s[0]
+counter = 0
+result = ''
+for c in s:
+    if current == c:
+        counter += 1
+    else:
+        result += (current + str(counter))
+        current = c
+        counter = 1
+result += (current + str(counter))
+print(result)
