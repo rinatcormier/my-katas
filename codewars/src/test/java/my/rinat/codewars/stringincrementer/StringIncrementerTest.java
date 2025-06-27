@@ -10,22 +10,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class StringIncrementerTest {
 
-    /*
-     * TODO:
-     *  Cases:
-     *   - "1" -> "2"
-     *   - "01" -> "02"
-     *   - "foo" -> "foo1"
-     *   - "foo1" -> "foo2"
-     *   - "foo01" -> "foo02"
-     *   - "foo99" -> "foo100"
-     *   - "foo099" -> "foo100"
-     *   - "foo0099" -> "foo0100"
-     *   - "foo111111111111111111111111111111111111111111111111111111111111" -> "foo111111111111111111111111111111111111111111111111111111111112"
-     *   - "d0000000000000000000000000000000000" -> "d0000000000000000000000000000000001"
-     *  Consider cases when number is extremely big then use BigInteger, else use int or long primitives.
-     */
-
     @ParameterizedTest
     @MethodSource("incNumberByOneCandidates")
     void incNumberByOne(String parameter, String expected) {
