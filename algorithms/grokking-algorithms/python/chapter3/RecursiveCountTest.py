@@ -1,7 +1,7 @@
 import unittest
 import RecursiveCount
 
-class RecursiveSumTest(unittest.TestCase):
+class RecursiveCountTest(unittest.TestCase):
 
     def test_count_empty_list(self):
         self.assertEqual(RecursiveCount.recursive_count([]), 0)
