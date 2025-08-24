@@ -4,3 +4,6 @@
 *.iml
 **/node_modules
 **/build
+**/tmp
+.vscode
+**/__pycache__
