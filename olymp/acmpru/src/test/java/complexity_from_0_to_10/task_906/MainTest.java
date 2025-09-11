@@ -14,7 +14,7 @@ class MainTest {
 
     @ParameterizedTest
     @MethodSource("candidates")
-    void testPrimesRange(String input, String expected) {
+    void testCandidates(String input, String expected) {
         new MockedStdIO(input).run(output -> {
             Main.main(new String[]{});
             assertThat(output.toString()).isEqualTo(expected);
