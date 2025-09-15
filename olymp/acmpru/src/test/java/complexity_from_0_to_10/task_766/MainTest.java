@@ -1,4 +1,4 @@
-package complexity_from_0_to_10.task_942;
+package complexity_from_0_to_10.task_766;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,10 +23,10 @@ class MainTest {
 
     private static Stream<Arguments> candidates() {
         return Stream.of(
-                Arguments.of(separatedObjectsAsString(3, "40 30 60"), separatedObjectsAsString(1)),
-                Arguments.of(separatedObjectsAsString(4, "10 20 30 40"), separatedObjectsAsString(1)),
-                Arguments.of(separatedObjectsAsString(1, "10"), separatedObjectsAsString(1)),
-                Arguments.of(separatedObjectsAsString(5, "10 10 10 10 10"), separatedObjectsAsString(1))
+                Arguments.of(separatedObjectsAsString("4 5 20"), separatedObjectsAsString("YES")),
+                Arguments.of(separatedObjectsAsString("4 5 21"), separatedObjectsAsString("NO")),
+                Arguments.of(separatedObjectsAsString("3 2 1"), separatedObjectsAsString("YES")),
+                Arguments.of(separatedObjectsAsString("1 1 2"), separatedObjectsAsString("NO"))
         );
     }
 }

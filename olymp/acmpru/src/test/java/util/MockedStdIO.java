@@ -1,4 +1,4 @@
-package complexity_from_0_to_10.util;
+package util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

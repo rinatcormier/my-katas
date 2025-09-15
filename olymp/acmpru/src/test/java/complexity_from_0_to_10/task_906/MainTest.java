@@ -1,14 +1,14 @@
 package complexity_from_0_to_10.task_906;
 
-import complexity_from_0_to_10.util.MockedStdIO;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import util.MockedStdIO;
 
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.joining;
 import static org.assertj.core.api.Assertions.assertThat;
+import static util.Utils.separatedObjectsAsString;
 
 class MainTest {
 
@@ -27,11 +27,5 @@ class MainTest {
                 Arguments.of(separatedObjectsAsString(3), separatedObjectsAsString(4)),
                 Arguments.of(separatedObjectsAsString(1_000_000), separatedObjectsAsString(1_000_001))
         );
-    }
-
-    private static String separatedObjectsAsString(Object... objects) {
-        return Stream.of(objects)
-                .map(String::valueOf)
-                .collect(joining(System.lineSeparator(), "", System.lineSeparator()));
     }
 }
