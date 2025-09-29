@@ -47,6 +47,7 @@
         <module>front-end</module>
         <module>interview-problems</module>
         <module>testwithspringcourse</module>
+        <module>leetcode</module>
     </modules>
     <packaging>pom</packaging>
 
