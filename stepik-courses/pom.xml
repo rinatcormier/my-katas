@@ -18,6 +18,7 @@
         <module>java__base_course</module>
         <module>stepik-test</module>
         <module>stepik-kotlin-course</module>
+        <module>algo__algoritmic_tasks_from_interviews</module>
     </modules>
     <packaging>pom</packaging>
 
