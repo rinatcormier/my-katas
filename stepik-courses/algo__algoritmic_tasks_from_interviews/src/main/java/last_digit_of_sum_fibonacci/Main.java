@@ -4,30 +4,28 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static long getFibonacciSumModulo(long n, long m) {
+    private static long getFibonacciSumModulo(long n) {
         if (n <= 1) {
             return n;
         }
         long prev = 0;
         long curr = 1;
-        long sum = 1;
         for (long i = 0; i < n - 1; i++) {
             long temp = prev;
             prev = curr;
-            curr = (temp + curr) % m;
-            sum = (sum + curr) % 10;
+            curr = (temp + curr) % 10;
         }
-        return sum;
+        return curr;
     }
 
-    private static int pisanoPeriod(long m) {
+    private static int pisanoPeriod() {
         long current = 0;
         long next = 1;
         long prevNext;
         int period = 0;
         do {
             prevNext = next;
-            next = (current + next) % m;
+            next = (current + next) % 10;
             current = prevNext;
             period++;
         } while (current != 0 || next != 1);
@@ -37,7 +35,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
-        int p = pisanoPeriod(10);
-        System.out.println(getFibonacciSumModulo(n % p, 10));
+        int p = pisanoPeriod();
+        var fibonacciSumModulo = getFibonacciSumModulo((n + 2) % p);
+        System.out.println(fibonacciSumModulo == 0 ? 9 : fibonacciSumModulo - 1);
     }
 }
