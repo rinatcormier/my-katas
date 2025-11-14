@@ -48,6 +48,7 @@
         <module>interview-problems</module>
         <module>testwithspringcourse</module>
         <module>leetcode</module>
+        <module>coffee-shop</module>
     </modules>
     <packaging>pom</packaging>
 
