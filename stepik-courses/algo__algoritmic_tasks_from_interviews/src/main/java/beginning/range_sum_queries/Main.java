@@ -1,4 +1,4 @@
-package range_sum_queries;
+package beginning.range_sum_queries;
 
 import java.util.Arrays;
 import java.util.Scanner;

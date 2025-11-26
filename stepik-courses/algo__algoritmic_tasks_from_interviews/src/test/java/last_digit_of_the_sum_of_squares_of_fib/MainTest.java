@@ -1,5 +1,6 @@
 package last_digit_of_the_sum_of_squares_of_fib;
 
+import beginning.last_digit_of_the_sum_of_squares_of_fib.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

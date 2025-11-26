@@ -1,4 +1,4 @@
-package last_digit_of_fibonacci_number;
+package beginning.last_digit_of_fibonacci_number;
 
 import java.util.Scanner;
 

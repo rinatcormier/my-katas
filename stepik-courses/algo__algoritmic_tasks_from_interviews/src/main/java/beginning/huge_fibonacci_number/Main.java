@@ -1,10 +1,10 @@
-package last_digit_of_sum_fibonacci;
+package beginning.huge_fibonacci_number;
 
 import java.util.Scanner;
 
 public class Main {
 
-    private static long getFibonacciModulo(long n) {
+    private static long getHugeFibonacciModulo(long n, long m) {
         if (n <= 1) {
             return n;
         }
@@ -13,19 +13,19 @@ public class Main {
         for (long i = 0; i < n - 1; i++) {
             long temp = prev;
             prev = curr;
-            curr = (temp + curr) % 10;
+            curr = (temp + curr) % m;
         }
         return curr;
     }
 
-    private static int pisanoPeriod() {
+    private static int pisanoPeriod(long m) {
         long current = 0;
         long next = 1;
         long prevNext;
         int period = 0;
         do {
             prevNext = next;
-            next = (current + next) % 10;
+            next = (current + next) % m;
             current = prevNext;
             period++;
         } while (current != 0 || next != 1);
@@ -35,8 +35,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
-        int p = pisanoPeriod();
-        var fibonacciSumModulo = getFibonacciModulo((n + 2) % p);
-        System.out.println(fibonacciSumModulo == 0 ? 9 : fibonacciSumModulo - 1);
+        long m = scanner.nextLong();
+        int p = pisanoPeriod(m);
+        System.out.println(getHugeFibonacciModulo(n % p, m));
     }
 }

@@ -1,4 +1,4 @@
-package last_digit_of_partial_sum_of_fibonacci_numbers;
+package beginning.last_digit_of_sum_fibonacci;
 
 import java.util.Scanner;
 
@@ -35,15 +35,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long n = scanner.nextLong();
-        long m = scanner.nextLong();
         int p = pisanoPeriod();
-        var sumN = getFibonacciModulo((n + 1) % p);
-        var sumM = getFibonacciModulo((m + 2) % p);
-        sumN = sumN == 0 ? 9 : sumN - 1;
-        sumM = sumM == 0 ? 9 : sumM - 1;
-        if (sumM < sumN) {
-            sumM += 10;
-        }
-        System.out.println(sumM - sumN);
+        var fibonacciSumModulo = getFibonacciModulo((n + 2) % p);
+        System.out.println(fibonacciSumModulo == 0 ? 9 : fibonacciSumModulo - 1);
     }
 }

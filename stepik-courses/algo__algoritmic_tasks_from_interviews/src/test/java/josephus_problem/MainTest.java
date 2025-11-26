@@ -1,5 +1,6 @@
 package josephus_problem;
 
+import beginning.josephus_problem.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

@@ -1,5 +1,6 @@
 package programming_challenges.maximum_pairwise_product;
 
+import beginning.maximum_pairwise_product.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

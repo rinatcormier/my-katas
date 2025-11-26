@@ -1,5 +1,6 @@
 package least_common_multiple;
 
+import beginning.least_common_multiple.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

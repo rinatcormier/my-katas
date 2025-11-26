@@ -1,5 +1,6 @@
 package last_digit_of_sum_fibonacci;
 
+import beginning.last_digit_of_sum_fibonacci.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

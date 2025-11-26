@@ -1,4 +1,4 @@
-package last_digit_of_the_sum_of_squares_of_fib;
+package beginning.last_digit_of_the_sum_of_squares_of_fib;
 
 import java.util.Scanner;
 

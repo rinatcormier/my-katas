@@ -1,5 +1,6 @@
 package greatest_common_divisor;
 
+import beginning.greatest_common_divisor.Main;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

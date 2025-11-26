@@ -1,4 +1,4 @@
-package josephus_problem;
+package beginning.josephus_problem;
 
 import java.util.Scanner;
 
