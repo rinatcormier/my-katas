@@ -26,6 +26,10 @@ public class SimpleBank {
         System.out.printf("Total Balance: %10.2f.%n", getTotalBalance());
     }
 
+    public int size() {
+        return accounts.length;
+    }
+
     private double getTotalBalance() {
         double sum = 0;
         for (double account : accounts) {
