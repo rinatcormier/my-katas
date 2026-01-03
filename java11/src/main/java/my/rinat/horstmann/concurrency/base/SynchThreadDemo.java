@@ -1,11 +1,11 @@
 package my.rinat.horstmann.concurrency.base;
 
-import my.rinat.horstmann.concurrency.util.NotThreadSafeBank;
+import my.rinat.horstmann.concurrency.util.ThreadSafeBank;
 
 /**
- * The race condition demo.
+ * Synchronized by locks demo.
  */
-public class NotSynchThreadDemo {
+public class SynchThreadDemo {
 
     static final int ACCOUNTS = 10000;
     static final double INITIAL_BALANCE = 1000;
@@ -13,7 +13,7 @@ public class NotSynchThreadDemo {
     static final int DELAY = 10;
 
     public static void main(String[] args) {
-        var bank = new NotThreadSafeBank(ACCOUNTS, INITIAL_BALANCE);
+        var bank = new ThreadSafeBank(ACCOUNTS, INITIAL_BALANCE);
         for (int i = 0; i < ACCOUNTS; i++) {
             int fromAccount = i;
             Runnable task = () -> {

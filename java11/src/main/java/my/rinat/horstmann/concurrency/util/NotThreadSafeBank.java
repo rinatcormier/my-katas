@@ -2,11 +2,11 @@ package my.rinat.horstmann.concurrency.util;
 
 import java.util.Arrays;
 
-public class SimpleBank {
+public class NotThreadSafeBank {
 
     private final double[] accounts;
 
-    public SimpleBank(int numberOfAccounts, double initialBalance) {
+    public NotThreadSafeBank(int numberOfAccounts, double initialBalance) {
         accounts = new double[numberOfAccounts];
         Arrays.fill(accounts, initialBalance);
     }

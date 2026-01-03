@@ -1,6 +1,6 @@
 package my.rinat.horstmann.concurrency.base;
 
-import my.rinat.horstmann.concurrency.util.SimpleBank;
+import my.rinat.horstmann.concurrency.util.NotThreadSafeBank;
 
 class SimpleThreadDemo {
 
@@ -9,7 +9,7 @@ class SimpleThreadDemo {
     static final double MAX_AMOUNT = 1000;
 
     public static void main(String[] args) {
-        var bank = new SimpleBank(4, 100_000);
+        var bank = new NotThreadSafeBank(4, 100_000);
         Runnable task1 = () -> {
             try {
                 for (int i = 0; i < STEPS; i++) {
