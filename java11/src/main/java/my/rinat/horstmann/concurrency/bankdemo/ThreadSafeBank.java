@@ -18,14 +18,14 @@ public class ThreadSafeBank {
      * Thread-safe method.
      */
     public void transfer(int fromAccount, int toAccount, double amount) {
-        System.out.printf("%s; ", Thread.currentThread());
         if (accounts[fromAccount] < amount) {
-            System.out.printf("Insufficient funds on account %d.%n", fromAccount);
+            System.out.printf("%s; Insufficient funds on account %d.%n", Thread.currentThread(), fromAccount);
             return;
         }
         // the basic outline for protecting a code block with a ReentrantLock:
         bankLock.lock();
         try {
+            System.out.printf("%s; ", Thread.currentThread());
             accounts[fromAccount] -= amount;
             System.out.printf("%10.2f from %d to %d; ", amount, fromAccount, toAccount);
             accounts[toAccount] += amount;
