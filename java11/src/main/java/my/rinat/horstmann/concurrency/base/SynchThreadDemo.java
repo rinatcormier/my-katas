@@ -1,6 +1,6 @@
 package my.rinat.horstmann.concurrency.base;
 
-import my.rinat.horstmann.concurrency.util.ThreadSafeBank;
+import my.rinat.horstmann.concurrency.bankdemo.ThreadSafeBank;
 
 /**
  * Synchronized by locks demo.

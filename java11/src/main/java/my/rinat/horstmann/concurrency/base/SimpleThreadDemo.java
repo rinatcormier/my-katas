@@ -1,6 +1,6 @@
 package my.rinat.horstmann.concurrency.base;
 
-import my.rinat.horstmann.concurrency.util.NotThreadSafeBank;
+import my.rinat.horstmann.concurrency.bankdemo.NotThreadSafeBank;
 
 class SimpleThreadDemo {
 

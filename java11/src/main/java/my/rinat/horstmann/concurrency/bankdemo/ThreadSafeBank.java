@@ -1,4 +1,4 @@
-package my.rinat.horstmann.concurrency.util;
+package my.rinat.horstmann.concurrency.bankdemo;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.Lock;
