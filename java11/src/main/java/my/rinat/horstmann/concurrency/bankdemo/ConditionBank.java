@@ -27,7 +27,7 @@ public class ConditionBank {
             System.out.printf("%s; ", Thread.currentThread());
             long counter = 0;
             while (accounts[fromAccount] < amount) {
-                System.out.printf("%d ", ++counter);
+                System.out.printf("%d ", ++counter); // just for tracing
                 sufficientFunds.await();
             }
             accounts[fromAccount] -= amount;
