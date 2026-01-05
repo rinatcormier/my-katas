@@ -12,14 +12,16 @@ public class SynchronizedBank {
     }
 
     public synchronized void transfer(int fromAccount, int toAccount, double amount) throws InterruptedException {
-        System.out.printf("%s; ", Thread.currentThread());
-        long counter = 0;
+        double f = accounts[fromAccount];
+        double t = accounts[toAccount];
         while (accounts[fromAccount] < amount) {
-            System.out.printf("%d ", ++counter); // just for tracing
+            System.out.printf("%s; ", Thread.currentThread());
+            System.out.printf("Insufficient: %10.2f from %d[%.2f] to %d[%.2f]%n", amount, fromAccount, f, toAccount, t);
             wait();
         }
         accounts[fromAccount] -= amount;
-        System.out.printf("%10.2f from %d to %d; ", amount, fromAccount, toAccount);
+        System.out.printf("%s; ", Thread.currentThread());
+        System.out.printf("%10.2f from %d[%.2f] to %d[%.2f]; ", amount, fromAccount, f, toAccount, t);
         accounts[toAccount] += amount;
         System.out.printf("Total Balance: %10.2f.%n", getTotalBalance());
         notifyAll();
