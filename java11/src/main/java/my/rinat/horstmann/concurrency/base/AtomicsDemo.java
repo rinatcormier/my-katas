@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.LongAdder;
 
 public class AtomicsDemo {
 
-    static final int THREADS = 100_000;
+    static final int THREADS = 1000;
 
     public static void main(String[] args) {
         var atomicLong = new AtomicLong(0); // inefficient for huge number of threads in comparison with

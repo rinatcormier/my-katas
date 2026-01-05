@@ -7,9 +7,9 @@ import my.rinat.horstmann.concurrency.bankdemo.ThreadSafeBank;
  */
 public class SynchThreadDemo {
 
-    static final int ACCOUNTS = 10000;
+    static final int ACCOUNTS = 10;
     static final double INITIAL_BALANCE = 1000;
-    static final double MAX_AMOUNT = 100;
+    static final double MAX_AMOUNT = 1000;
     static final int DELAY = 10;
 
     public static void main(String[] args) {
