@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="4635" dy="4248" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="6396" dy="5476" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -185,6 +185,17 @@
         </mxCell>
         <mxCell id="v74TKjIDD4j9ubcqONKH-38" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.816;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-2">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-39" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Git и GitFlow&lt;/h1&gt;&lt;p&gt;Открытый вопрос, какой GitFlow использовать. Также, думаю, должен быть монорепозиторий (все (микро)сервисы в одной git-репе. Если это монорепозиторий, то версионность системы можно отслеживать по хешу коммита, например.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="230" width="1100" x="-730" y="-1100" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-40" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.209;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-180" y="-450" />
+              <mxPoint x="18" y="-450" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
