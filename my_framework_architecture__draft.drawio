@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="5613" dy="3830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2678" dy="1783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,8 +40,8 @@
         <mxCell id="pABJUcwdlSBN9XXVtCt0-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Courier New;fontSize=13;" value="Hexagonal Architecture" vertex="1">
           <mxGeometry height="40" width="200" x="390" y="470" as="geometry" />
         </mxCell>
-        <mxCell id="pABJUcwdlSBN9XXVtCt0-13" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;fontSize=8;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;Гексагональная архитектура, за счёт изоляции от других компонентов системы, позволяет тестировать бизнес-логику чисто юнит-тестами. В идеале, абсолютно всё тестируется через юнит-тесты, даже логирование (тут стоит подумать, если логирование происходит на уровне интеграции или контроллера, то как тестить логирование? Этот вопрос был рассмотрен у Хорикова, в книге про тестирование.). Также, в идеале, бизнес логика должна быть ещё покрыта мутабельными тестами. Так как это Pure Java, то мутабельные тесты тут хорошо подходят.&lt;/span&gt;&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="230" width="520" x="680" y="250" as="geometry" />
+        <mxCell id="pABJUcwdlSBN9XXVtCt0-13" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;fontSize=8;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;Гексагональная архитектура, за счёт изоляции от других компонентов системы, позволяет тестировать бизнес-логику чисто юнит-тестами. В идеале, абсолютно всё тестируется через юнит-тесты, даже логирование (тут стоит подумать, если логирование происходит на уровне интеграции или контроллера, то как тестить логирование? Этот вопрос был рассмотрен у Хорикова, в книге про тестирование.). Также, в идеале, бизнес логика должна быть ещё покрыта мутабельными тестами. Так как это Pure Java, то мутабельные тесты тут хорошо подходят. Сценарии на юнит-тесты такие, чтобы покрыть все ветвления самыми разными кейсами, даже абсурдными. Сценарии придумывают разработчики.&lt;/span&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="270" width="520" x="680" y="250" as="geometry" />
         </mxCell>
         <mxCell id="pABJUcwdlSBN9XXVtCt0-14" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="pABJUcwdlSBN9XXVtCt0-13" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -91,7 +91,7 @@
         <mxCell id="v74TKjIDD4j9ubcqONKH-14" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="v74TKjIDD4j9ubcqONKH-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="v74TKjIDD4j9ubcqONKH-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=22;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;E2E тесты (REST API)&lt;/h1&gt;&lt;p&gt;Для прогона E2E тестов, сервис поднимается полностью (интеграции с БД, Kafka через Testcontainers, а с другими сервисами через Mock сервисы). Тестируется как black box, без опоры на знания внутренностей сервиса. Используется, например, RestAssured.&lt;/p&gt;" vertex="1">
+        <mxCell id="v74TKjIDD4j9ubcqONKH-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=22;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;E2E тесты (REST API)&lt;/h1&gt;&lt;p&gt;Для прогона E2E тестов, сервис поднимается полностью (интеграции с БД, Kafka через Testcontainers, а с другими сервисами через Mock сервисы). Тестируется как black box, без опоры на знания внутренностей сервиса. Используется, например, RestAssured. Тут бизнес-сценарии. Обычно придумываются тестировщиками, либо кем-то из бизнеса. Они же и смотрят отчёты в Allure.&lt;/p&gt;" vertex="1">
           <mxGeometry height="260" width="750" x="-1230" y="150" as="geometry" />
         </mxCell>
         <mxCell id="v74TKjIDD4j9ubcqONKH-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
@@ -132,6 +132,30 @@
         </mxCell>
         <mxCell id="v74TKjIDD4j9ubcqONKH-20" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CI/CD etc.&lt;/h1&gt;&lt;p&gt;Сборка и упаковка происходит в GitLab и Nexus.&lt;/p&gt;" vertex="1">
           <mxGeometry height="140" width="550" y="1330" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-23" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="v74TKjIDD4j9ubcqONKH-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-22" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Как версионировать приложение, это открытый вопрос...&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="190" width="665" x="175" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-24" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Соблюдение контракта API между frontend и backend&lt;/h1&gt;&lt;div&gt;Интегрируясь через REST, не должен нарушаться контракт API. По идее, этого можно достичь инструментами, типа Pact -- пишутся тесты на соблюдение контракта, если контракт нарушился -- тесты падают, сборка не собирается.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="310" width="925" x="-975" y="1790" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-25" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.879;entryY=1.054;entryDx=0;entryDy=0;entryPerimeter=0;" target="v74TKjIDD4j9ubcqONKH-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-26" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.117;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-29" edge="1" parent="1" source="v74TKjIDD4j9ubcqONKH-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="pABJUcwdlSBN9XXVtCt0-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="450" width="970" x="1990" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="v74TKjIDD4j9ubcqONKH-28" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Статический анализ и покрытие тестами&lt;/h1&gt;&lt;p&gt;Важной частью всего подхода к разработке является построение строгого барьера на качество кода в виде всевозможных статических анализаторов и контроля покрытия тестами.&lt;/p&gt;&lt;p&gt;Инструменты, типа: Checkstyle, PMD, SpotBugs, ErrorProne, JaCoCo, Maven Enforcer, ArchUnit, всевозможные чекеры и линтеры и т.д.&lt;/p&gt;&lt;p&gt;Тут можно обратиться к опыту Егора Бугаенко по настройке строгого барьера.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="420" width="880" x="2050" y="-50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
