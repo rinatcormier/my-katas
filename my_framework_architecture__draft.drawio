@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="2678" dy="1783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5613" dy="3830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -152,10 +152,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="v74TKjIDD4j9ubcqONKH-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="450" width="970" x="1990" y="-100" as="geometry" />
+          <mxGeometry height="450" width="970" x="1650" y="-50" as="geometry" />
         </mxCell>
         <mxCell id="v74TKjIDD4j9ubcqONKH-28" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Статический анализ и покрытие тестами&lt;/h1&gt;&lt;p&gt;Важной частью всего подхода к разработке является построение строгого барьера на качество кода в виде всевозможных статических анализаторов и контроля покрытия тестами.&lt;/p&gt;&lt;p&gt;Инструменты, типа: Checkstyle, PMD, SpotBugs, ErrorProne, JaCoCo, Maven Enforcer, ArchUnit, всевозможные чекеры и линтеры и т.д.&lt;/p&gt;&lt;p&gt;Тут можно обратиться к опыту Егора Бугаенко по настройке строгого барьера.&lt;/p&gt;" vertex="1">
-          <mxGeometry height="420" width="880" x="2050" y="-50" as="geometry" />
+          <mxGeometry height="420" width="880" x="1710" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
