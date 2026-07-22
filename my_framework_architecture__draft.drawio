@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="2024" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2656" dy="1260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -70,8 +70,8 @@
         <mxCell id="pABJUcwdlSBN9XXVtCt0-26" edge="1" parent="1" source="pABJUcwdlSBN9XXVtCt0-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.54;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="pABJUcwdlSBN9XXVtCt0-28" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Вешается на контроллеры или на бизнес-логику? Если второе, то это уже не Pure Java.&lt;/font&gt;&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="100" width="230" x="210" y="240" as="geometry" />
+        <mxCell id="pABJUcwdlSBN9XXVtCt0-28" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Вешается на контроллеры или на бизнес-логику? Если второе, то это уже не Pure Java. Поэтому, предположительно, Spring Security вешается только на контроллеры.&lt;/font&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="100" width="320" x="160" y="240" as="geometry" />
         </mxCell>
         <mxCell id="pABJUcwdlSBN9XXVtCt0-29" edge="1" parent="1" source="pABJUcwdlSBN9XXVtCt0-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.248;entryY=0.867;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-24">
           <mxGeometry relative="1" as="geometry" />
