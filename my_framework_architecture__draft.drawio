@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="4635" dy="4248" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3657" dy="3565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -41,7 +41,7 @@
           <mxGeometry height="40" width="200" x="355" y="365" as="geometry" />
         </mxCell>
         <mxCell id="pABJUcwdlSBN9XXVtCt0-13" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;fontSize=8;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;1. Гексагональная архитектура, за счёт изоляции от других компонентов системы, позволяет тестировать бизнес-логику чисто юнит-тестами. В идеале, абсолютно всё тестируется через юнит-тесты, даже логирование (тут стоит подумать, если логирование происходит на уровне интеграции или контроллера, то как тестить логирование? Этот вопрос был рассмотрен у Хорикова, в книге про тестирование.).&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;2. Гексагональные юниты, в идеале, можно рассматривать как &quot;чистые функции&quot; (из функционального программирования), т.е. они не имеют сайд эффектов. В таком случае, их достаточно тестировать только юнит-тестами.&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;3. Опять же, в идеале, бизнес-логика лежит только в гексагональных юнитах. В других компонентах (контроллеры, репозитории, точки интеграции) бизнес-логики быть не должно. То есть, если в таких компонентах появляется даже какой-то if, то это вопрос -- нужен ли тут этот if.&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;4. Pure Java для бизнес-логики позволяет бизнес логику покрыть мутабельными тестами.&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;5. Сценарии на юнит-тесты такие, чтобы покрыть все ветвления самыми разными кейсами, даже абсурдными придумывают разработчики.&lt;/span&gt;&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="755" width="520" x="670" y="95" as="geometry" />
+          <mxGeometry height="755" width="520" x="780" y="60" as="geometry" />
         </mxCell>
         <mxCell id="pABJUcwdlSBN9XXVtCt0-14" edge="1" parent="1" source="pABJUcwdlSBN9XXVtCt0-11" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="pABJUcwdlSBN9XXVtCt0-13" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -200,7 +200,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JkXhLjRZb8llb88Gvu2Q-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Открытые вопросы&lt;/h1&gt;&lt;p&gt;1. Аудит (история изменений записей) через Hibernate Envers или что ещё?&lt;/p&gt;&lt;p&gt;2. Нужно выработать механизм шардирования БД (для масштабирований)&lt;/p&gt;&lt;p&gt;3. Нужно выработать механизм репликаций БД (для создания бэкапов)&lt;/p&gt;&lt;p&gt;4. Нужно уметь масштабировать Кафку&lt;/p&gt;&lt;p&gt;5. Нужно уметь масштабировать сами (микро)сервисы&lt;/p&gt;&lt;p&gt;6. Аутентификация и авторизация по схеме OAuth2 + JWT? А что Keycloak?&lt;/p&gt;&lt;p&gt;7. Сервера на Ubuntu Server и бэкапятся? БД на эти сервера, а приложение в докере/k8s, которые тоже на Ubuntu Server.&lt;/p&gt;" vertex="1">
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Открытые вопросы&lt;/h1&gt;&lt;p&gt;1. Аудит (история изменений записей) через Hibernate Envers или что ещё?&lt;/p&gt;&lt;p&gt;2. Нужно выработать механизм шардирования БД (для масштабирований)&lt;/p&gt;&lt;p&gt;3. Нужно выработать механизм репликаций БД (для создания бэкапов)&lt;/p&gt;&lt;p&gt;4. Нужно уметь масштабировать Кафку&lt;/p&gt;&lt;p&gt;5. Нужно уметь масштабировать сами (микро)сервисы&lt;/p&gt;&lt;p&gt;6. Аутентификация и авторизация по схеме OAuth2 + JWT? А что Keycloak?&lt;/p&gt;&lt;p&gt;7. Сервера на Ubuntu Server и бэкапятся? БД на эти сервера, а приложение в докере/k8s, которые тоже на Ubuntu Server.&lt;/p&gt;&lt;p&gt;8. Микросервисы поднимаются в Istio, через Spring Cloud?&lt;/p&gt;&lt;p&gt;9. При надобности внедрить машину состояний делать что-то своё или Spring State Machine, либо ещё что-то стороннее?&lt;/p&gt;&lt;p&gt;10. Для миграций использовать Flyway или Liquibase? Или что-то ещё?&lt;/p&gt;&lt;p&gt;11. Уметь внедрять Camunda?&lt;/p&gt;" vertex="1">
           <mxGeometry height="850" width="890" x="1480" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="JkXhLjRZb8llb88Gvu2Q-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
@@ -216,6 +216,9 @@
         </mxCell>
         <mxCell id="JkXhLjRZb8llb88Gvu2Q-5" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Observability&lt;/h1&gt;&lt;p&gt;1. ELK stack&lt;/p&gt;&lt;p&gt;2. Prometheus + Grafana&lt;/p&gt;&lt;p&gt;3. Бизнес-аналитика (Clickhouse, Apache NiFi?) -- открытый вопрос&lt;/p&gt;&lt;p&gt;4. Для чего может понадобиться Sentry? Логирование фронта?&lt;/p&gt;" vertex="1">
           <mxGeometry height="300" width="760" x="370" y="2470" as="geometry" />
+        </mxCell>
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-6" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Базовый принцип&lt;/h1&gt;&lt;p&gt;Проект (микро)сервис(ов) всегда должен быть в таком состоянии, чтобы всё тестировалось автоматически, начиная с юнит-тестов и заканчивая E2E. В идеале, ручного тестирования не должно быть.&lt;/p&gt;&lt;p&gt;Такой подход позволит отдать всю разработку на откуп AI-агентам. Главное, чтобы максимально строго и справедливо были настроены статические анализаторы и другие контроли Quality Gate, чтобы агенты не самовольниичали.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="450" width="520" x="190" y="680" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
