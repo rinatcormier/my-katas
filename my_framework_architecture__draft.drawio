@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="LjJlObnih52HbGQaQb0i">
-    <mxGraphModel dx="2874" dy="3019" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4635" dy="4248" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -199,6 +199,23 @@
               <mxPoint x="18" y="-450" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Открытые вопросы&lt;/h1&gt;&lt;p&gt;1. Аудит (история изменений записей) через Hibernate Envers или что ещё?&lt;/p&gt;&lt;p&gt;2. Нужно выработать механизм шардирования БД (для масштабирований)&lt;/p&gt;&lt;p&gt;3. Нужно выработать механизм репликаций БД (для создания бэкапов)&lt;/p&gt;&lt;p&gt;4. Нужно уметь масштабировать Кафку&lt;/p&gt;&lt;p&gt;5. Нужно уметь масштабировать сами (микро)сервисы&lt;/p&gt;&lt;p&gt;6. Аутентификация и авторизация по схеме OAuth2 + JWT? А что Keycloak?&lt;/p&gt;&lt;p&gt;7. Сервера на Ubuntu Server и бэкапятся? БД на эти сервера, а приложение в докере/k8s, которые тоже на Ubuntu Server.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="850" width="890" x="1480" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="370" width="860" x="320" y="2430" as="geometry" />
+        </mxCell>
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-4" edge="1" parent="1" source="JkXhLjRZb8llb88Gvu2Q-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.789;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;" target="pABJUcwdlSBN9XXVtCt0-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="2030" />
+              <mxPoint x="976" y="2030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JkXhLjRZb8llb88Gvu2Q-5" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Observability&lt;/h1&gt;&lt;p&gt;1. ELK stack&lt;/p&gt;&lt;p&gt;2. Prometheus + Grafana&lt;/p&gt;&lt;p&gt;3. Бизнес-аналитика (Clickhouse, Apache NiFi?) -- открытый вопрос&lt;/p&gt;&lt;p&gt;4. Для чего может понадобиться Sentry? Логирование фронта?&lt;/p&gt;" vertex="1">
+          <mxGeometry height="300" width="760" x="370" y="2470" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
